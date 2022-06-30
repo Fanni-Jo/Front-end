@@ -3,6 +3,9 @@ import Navbar from "../Components/Navbar"
 export default function Form(){
     return (
       <> 
+      <div className="container-form-signup signup">
+      <div className="row">
+
       <h3 className="text-center my-2  mb-4">Registration Form</h3>
       {/* <h4 className="my-3 fs-6 text-center m-4 ">welcom to Fanni JO</h4> */}
 <form className="container m-10 ">
@@ -80,8 +83,10 @@ export default function Form(){
   </div> */}
 
 
-  <button type="submit" className="btn btn-primary btn-block mb-4">Register</button>
+  <button type="submit" className="btn btn-success btn-block mb-4">Register</button>
 </form>
+</div>
+</div>
 </> 
     )
 }
