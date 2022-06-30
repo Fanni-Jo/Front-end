@@ -8,7 +8,7 @@ function Main() {
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">Fanni Jo</h2>
-                    <h3 className="section-subheading text-muted">Why You should chose us</h3>
+                    <h3 className="section-subheading text-muted text-wrap">Why You should chosse us</h3>
                 </div>
                 <div className="row text-center">
                     <div className="col-md-4">
@@ -18,7 +18,7 @@ function Main() {
                              <Image src={pic17} />
                         </span>
                         <h4 className="my-5">fast</h4>
-                        <p className="text-muted">You just need to click some click and Your service its done  </p>
+                        <p className="text-muted text-wrap">It does not matter where you live, we will be there! </p>
                     </div>
                     <div className="col-md-4">
                         <span className="fa-stack fa-4x">
