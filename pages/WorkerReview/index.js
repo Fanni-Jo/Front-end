@@ -1,6 +1,6 @@
 import Image from  'next/image'
 
-function OneService() {
+function WorkerReview() {
   return (
 
     <div>
@@ -11,7 +11,6 @@ function OneService() {
         <div class="col-md-6  text-center">
          {/* <Image class="card-img-top"  src="@" alt="..."/> */}
          <button type="button" class="btn btn-dark mt-4 " style={{width: 200}}>Select </button> 
-         {/* style={{marginRight: spacing + 'em'}} */}
         <hr/>
 
         </div>
@@ -85,4 +84,4 @@ function OneService() {
   )
 }
 
-export default OneService
+export default WorkerReview

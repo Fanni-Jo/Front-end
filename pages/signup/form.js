@@ -3,9 +3,8 @@ import Navbar from "../Components/Navbar"
 export default function Form(){
     return (
       <> 
-      <Navbar/>
-      <h3 className="text-center my-2 ">Registration Info</h3>
-      <h4 className="my-3 fs-6 text-center m-4 ">welcom to Fanni JO</h4>
+      <h3 className="text-center my-2  mb-4">Registration Form</h3>
+      {/* <h4 className="my-3 fs-6 text-center m-4 ">welcom to Fanni JO</h4> */}
 <form className="container m-10 ">
   
   <div className="row mb-4">
@@ -36,12 +35,12 @@ export default function Form(){
   </div>
 
   <div className="form-outline mb-4">
-    <label className="form-label" for="form6Example3">passwored</label>
+    <label className="form-label" for="form6Example3">password</label>
     <input type="text" id="form6Example3" className="form-control" />
   </div>
 
   <div className="form-outline mb-4">
-    <label className="form-label" for="form6Example3">re passwored</label>
+    <label className="form-label" for="form6Example3">confirm password</label>
     <input type="text" id="form6Example3" className="form-control" />
   </div>
 
@@ -64,7 +63,7 @@ export default function Form(){
   </div>
 
   <div className="form-outline mb-4">
-    <label className="form-label" for="form6Example6">no. experience</label>
+    <label className="form-label" for="form6Example6">Years of experience</label>
     <input type="number" id="form6Example6" className="form-control" />
   </div>
 

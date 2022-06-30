@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import Image from  'next/image'
+
 
 function Navbar() {
   return (
 <nav className="navbar navbar-expand-lg  navbar-dark bg-dark  ">
         <div className="container-fluid">
-          {/* <Image src={favicon} alt="sorry" width="30" height="24" className ="d-inline-block align-text-top p-l-5 " /> */}
+          {/* <Image src={favcon} alt="sorry" width="30" height="24" className ="d-inline-block align-text-top p-l-5 " /> */}
           <Link href="/">
             <a className="navbar-brand" href="#">
               Fanni
@@ -55,12 +57,11 @@ function Navbar() {
           </div>
         </div>
         <div
-          className="btn-group mr-2 me-2"
-          role="group"
-          aria-label="First group"
-        >
-          <button className="btn btn-warning btn-sm ">Login</button>
-          <button className="btn btn-warning btn-sm">Signup</button>
+            className="btn-group mr-2 me-2"
+            role="group"
+            aria-label="First group">
+          <button className="btn btn-warning btn-sm "><Link  href='/Login'><a className="text-dark text-decoration-none ">Login</a></Link></button>
+          <button className="btn btn-warning btn-sm"><Link  href='/signup'><a className="text-dark text-decoration-none ">Signup</a></Link></button>
         </div>
       </nav>
     );
