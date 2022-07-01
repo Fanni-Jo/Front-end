@@ -11,15 +11,15 @@ function Login() {
     <div className ="row">
         <div className ="col-md-4 boxplace">
       <form className='container-form'>
-      <h3>Login</h3>
+      <h3 className="text-center">Login</h3>
 
         <div className="form-group">
-          <label for="exampleInputUsername">Username</label>
+          <label className="font-weight-bold"for="exampleInputUsername">Username</label>
           <input type="email" className="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter Username"></input>
           
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label className="font-weight-bold" for="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
         </div>
        

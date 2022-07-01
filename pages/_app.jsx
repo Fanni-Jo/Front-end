@@ -1,4 +1,5 @@
 import '../style/index.css';
+import '../style/register.css';
 // import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect } from 'react';
 import {Helmet} from "react-helmet";
