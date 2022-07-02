@@ -12,6 +12,7 @@ function Navbar() {
               Fanni
             </a>
           </Link>
+
           <button
             className="navbar-toggler"
             type="button"

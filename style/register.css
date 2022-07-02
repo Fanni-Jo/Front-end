@@ -199,6 +199,27 @@
       }
       } 
 
+
+      @media screen  and (max-device-width:280px) {
+  
+        .dropdown  {
+          width: 150px;
+          margin-left: 10px
+    
+           
+        }
+        } 
+
+        @media screen  and (max-device-width:280px) {
+  
+          .dropdown:hover  {
+            width: 200px;
+           
+             
+          }
+          } 
+  
+
       .login-form{
 
         
