@@ -11,19 +11,34 @@
     background-image: url('../pages/src/img/signup/registerbg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-  
+
+
   
   }
+
+
+  /* @media only screen and (max-device-width: 768px) { */
+    /* For general iPad layouts */
+    /* .signup{
+      background-image: url('../pages/src/img/login/loginbg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+    }
+  } */
   h3{
     
     font-size: 30 px;
     color: rgb(18, 14, 14);
     
   
-  
-     
-  
+
+
   }
+
+    
+   
+
   .form-label{
   
     margin-bottom: 0.5rem;
@@ -35,7 +50,7 @@
   }
 
   .form-control {
-    display: block;
+    /* display: block; */
 
     font-size: 1rem;
     font-weight: 400;
@@ -50,15 +65,7 @@
     border-radius: 0.7rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-  @media (max-width:991px) and (min-width:580px){
-    .signup-form{
-      background-color:red;
 
-
-      
-    }
-    }
-  
     
     
   
@@ -111,7 +118,7 @@
   }
 
   .borderform{
-    border: 1px solid rgb(219, 72, 4);
+    border: 1px solid rgb(180, 144, 128);
     border-radius: 0.7rem;
     transition: 0.2s ease;
     background-color: rgb(0, 0, 0, 0.4);
@@ -158,3 +165,55 @@
 
  
 }
+
+.gradient-custom {
+  /* fallback for old browsers */
+  /* background: #6a11cb; */
+  background-image: url("../pages/src/img/login/register-bg.jpg");
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); */
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)) */
+  }
+
+  @media screen  and (min-device-width:993px) and (max-device-width:1399px) {
+  
+    .dropdown:hover {
+      width: 207px;
+
+      
+
+
+
+       
+    }
+    } 
+    @media screen  and (min-device-width:993px) and (max-device-width:1399px) {
+  
+      .dropdown {
+        width: 207px;
+
+         
+      }
+      } 
+
+      .login-form{
+
+        
+        padding: 40px 40px;
+        border-radius: 50px 0px;
+        -webkit-box-shadow: -0px 1px 14px -1px rgba(29, 23, 23, 0.75);
+        -moz-box-shadow: -2px 6px 14px -1px rgba(0, 0, 0, 0.75);
+        box-shadow: -2px 6px 14px -1px rgb(0, 0, 0, 0.75);
+        color:aliceblue;
+
+        
+      }
+      
+
+      .login-form:hover{
+        box-shadow: -0px -0px 100px rgb(255,255, 255);
+        
+      }
