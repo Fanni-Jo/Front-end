@@ -4,7 +4,7 @@ import pic18 from "../src/img/portfolio/18.svg"
 import pic19 from "../src/img/portfolio/19.svg"
 function Main() {
   return (
-<section className="page-section" id="services">
+<section className="page-section" id="features">
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">Fanni Jo</h2>

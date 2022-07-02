@@ -14,7 +14,6 @@ import About from './Landing/About'
 // import WorkerReview from './WorkerReview'
 import Landing from './Landing'
 
-
 export default function Home() {
 
 

@@ -8,7 +8,7 @@ function Navbar() {
         <div className="container-fluid">
           {/* <Image src={favcon} alt="sorry" width="30" height="24" className ="d-inline-block align-text-top p-l-5 " /> */}
           <Link href="/">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand text-warning" href="#">
               Fanni
             </a>
           </Link>
@@ -33,21 +33,36 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/">
+                <Link href="/#features">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Features
+                  </a>
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link href="/#services">
                   <a className="nav-link active" aria-current="page" href="../Services">
                     Services
                   </a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/">
+                <Link href="/#about">
                   <a className="nav-link active" aria-current="page" href="">
                     About us
                   </a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/">
+                <Link href="/#team">
+                  <a className="nav-link active" aria-current="page" href="">
+                    Team
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/#contact">
                   <a className="nav-link active" aria-current="page" href="">
                     Contact us
                   </a>
