@@ -11853,3 +11853,16 @@ background-color: #bcd0c7; */
     background-position: 2000px 0;
   }
 }
+
+
+@media (max-device-width:280px) {
+  .login-btn   {
+    width: 100px;
+  }
+} 
+
+/* @media(max-device-height:989px) {
+  . {
+    height: 990px;
+  }
+} */
