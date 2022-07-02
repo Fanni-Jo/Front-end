@@ -26,10 +26,10 @@ function Services() {
     <> 
     {/* <Navbar/> */}
     {/* NOTE HOW TO ERASE THE NAVBAR OR MAKE IT APEAR IN ALL PAGES WITHAT APPEAR IN THE Components */}
-<section className="page-section bg-light" id="portfolio">
+<section className="page-section bg-light" id="services">
            
             <div className="container">
-                <div className="text-center" id="services" >
+                <div className="text-center" >
                     <h2 className="section-heading text-uppercase">Services</h2>
                     <h3 className="section-subheading text-muted">provided by pro technican</h3>
                 </div>
