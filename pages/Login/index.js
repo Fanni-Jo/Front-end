@@ -1,11 +1,28 @@
 import Link from 'next/link'
 
-
+import {useState} from 'react'
 function Login() {
+
+  const [passwordType, setPasswordType] = useState("password");
+  const [show, setShow] = useState(false);
+
+  const togglePassword =(evnt)=>{
+
+    evnt.preventDefault();
+    setShow(!show);
+
+
+    
+    if(show===true){
+    
+    setPasswordType("text")}
+    else{
+      setPasswordType("password")
+    }
+    
+  }
   return (
     <>
-
-{/* <section className="vh-50 gradient-custom"> */}
   <div className="container-fluid py-2 h-50 gradient-custom">
     <div className="row d-flex justify-content-center align-items-center h-50 ">
       <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -14,22 +31,28 @@ function Login() {
 
             <form className="mb-md-5 mt-md-1 pb-5 login-form">
 
-              <h2 className="fw-bold mb-2 text-uppercase ">Login</h2>
+              <h2 className="fw-bold mb-2 text-uppercase text-warning">Login</h2>
               <p className="text-white-50 mb-5">Please enter your E-mail and Password!</p>
 
               <div className="form-outline form-white mb-4">
-                <input type="email" id="typeEmailX" className="form-control form-control-lg" />
+                <input type="email" id="typeEmailX" className="form-control form-control-lg" required/>
                 <label className="form-label" for="typeEmailX">Email</label>
               </div>
 
               <div className="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" className="form-control form-control-lg" />
+                <input type={passwordType} id="typePasswordX" className="form-control form-control-lg" required/>
                 <label className="form-label" for="typePasswordX">Password</label>
               </div>
 
-              <p className="small  pb-lg-2"><Link  href="/forget"><a className="text-white-50" href="#!">Forgot password?</a></Link></p>
+              <div >
+              <button className="btn eye" onClick={togglePassword} >
+                     { passwordType==="password"? <i className="bi bi-eye-slash"></i> :<i className="bi bi-eye"></i> }
+                     </button>
+              </div>
 
-              <button className="btn btn-outline-light btn-lg px-5 login-btn  " type="submit">Login</button>
+              <p className="small  pb-lg-2"><Link  href="/forget"><a className="text-white-50" href="#!">Forgot password?</a></Link></p>
+  
+              <button className="btn btn-outline-warning btn-lg px-5 login-btn  " type="submit">Login</button>
 
               <div className="d-flex justify-content-center text-center mt-4 pt-1">
                 <a href="#!" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
@@ -50,7 +73,7 @@ function Login() {
       </div>
     </div>
   </div>
-{/* </section> */}
+
 
  
 
