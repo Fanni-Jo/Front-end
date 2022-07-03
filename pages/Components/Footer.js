@@ -6,8 +6,7 @@ import linkedin from '../src/img/footer/linkedin.svg'
 
 function Footer() {
   return (
-
-        // <footer className="footer bg-dark">
+     // <footer className="footer bg-dark">
         //     <div className="container">
         //         <div className="row align-items-center">
         //             <div className="col-lg-4 text-lg-start text-light">Copyright &copy; Fanni 2022</div>
