@@ -11,6 +11,23 @@ export default function Form() {
 
   // }
   // console.log(file)
+
+  const [passwordType, setPasswordType] = useState("password");
+  const [show, setShow] = useState(false);
+
+  const togglePassword =(evnt)=>{
+
+    evnt.preventDefault();
+    setShow(!show);
+
+    if(show===true){
+    
+    setPasswordType("text")}
+    else{
+      setPasswordType("password")
+    }
+    
+  }
   
   return (
     <>
@@ -45,12 +62,18 @@ export default function Form() {
 
               <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
                 <label className="form-label  text-light" for="form6Example3">Password</label>
-                <input type="text" id="form6Example3" className="form-control " placeholder="Enter your password" required/>
+                <input type={passwordType} id="form6Example3" className="form-control " placeholder="Enter your password" required/>
               </div>
 
               <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
                 <label className="form-label  text-light text-fixed" for="form6Example3">Confirm Password</label>
-                <input type="text" id="form6Example3" className="form-control " placeholder="Re-enter your password" required/>
+                <input type={passwordType} id="form6Example3" className="form-control " placeholder="Re-enter your password" required/>
+              </div>
+
+              
+              <div className="col-md-12 col-sm-12 col-lg-12 text-center">
+                <button className="btn btn-dark form-label text-fixed" onClick={togglePassword} for="form6Example3">Show Password</button>
+                
               </div>
 
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mb-3  ">
@@ -86,36 +109,13 @@ export default function Form() {
                 <input type="file" id="imageFile" name="files" accept="image/*" className="text-light" list multiple />
               <div id="display-image"></div>
               </div>
-
-{/*       
-              <script type="text/javascript">
-
-                function GetImage(image) {
-                  $("#display-image").html(image)
-                  }
-
-              </script> */}
-              
-
-  
- 
-
-  
-   
-              <div className="col-xs-12 col-sm-12  col-md-12 col-lg-6 mb-3">
+             <div className="col-xs-12 col-sm-12  col-md-12 col-lg-6 mb-3">
                 <label className="form-label text-light" for="form6Example7">Gender</label>
                 <select id="gender" name="gender" className="p-2 dropdown " required>
                   <option className = "option" value="plumbing">Male</option>
                   <option className = "option" value="carpinting">Female</option>
                   </select>
               </div>
-
-
-              {/* <div className="col-md-12 col-sm-12 mb-3">
-                <label className="form-label text-light" for="form6Example7">Additional Information</label>
-                <textarea className="form-control" id="form6Example7" rows="4"></textarea>
-              </div> */}
-
               </div>
                 <button type="submit" className="btn btn-dark btn-block mb-4 registerbtn">Register</button>
             </form>
@@ -127,7 +127,14 @@ export default function Form() {
       </div>
     </div>
     </div>
-      {/* <div className="signup">
+     
+    </>
+  )
+}
+
+
+
+ {/* <div className="signup">
         <div className="container-form-signup ">
          
        
@@ -231,6 +238,3 @@ export default function Form() {
     
 
       
-    </>
-  )
-}

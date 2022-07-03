@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import {Helmet} from "react-helmet";
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer'
+import "bootstrap-icons/font/bootstrap-icons.json"
+
 
 export default function MyApp({ Component, pageProps }) {
   // useEffect(()=>{
@@ -18,6 +20,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
   <>
   <Head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" ></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></script>
