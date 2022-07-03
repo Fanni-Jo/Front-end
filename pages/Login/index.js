@@ -1,70 +1,113 @@
-import Link from 'next/link'
-import axios from "axios"
+import Link from "next/link";
+import { useState } from "react";
 
 function Login() {
-  
-  const logIn = async (event) => {  
-    event.preventDefault();
-    await axios.post('https://fanni-jo.herokuapp.com/login', {
-        username: event.target.username.value,
-        password: event.target.password.value
-    }).then(res => {
-      console.log(res)
-    });
+  const [passwordType, setPasswordType] = useState("password");
+  const [show, setShow] = useState(false);
+
+  const togglePassword = (evnt) => {
+    evnt.preventDefault();
+    setShow(!show);
+
+    if (show === true) {
+      setPasswordType("text");
+    } else {
+      setPasswordType("password");
     }
+  };
   return (
     <>
+      <div className="container-fluid py-2 h-50 gradient-custom">
+        <div className="row d-flex justify-content-center align-items-center h-50 ">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div className="card-body p-5 text-center">
+              <form
+                className="mb-md-5 mt-md-1 pb-5 login-form"
+                
+              >
+                <h2 className="fw-bold mb-2 text-uppercase text-warning">
+                  Login
+                </h2>
+                <p className="text-white-50 mb-5">
+                  Please enter your E-mail and Password!
+                </p>
 
-{/* <section className="vh-50 gradient-custom"> */}
-  <div className="container-fluid py-2 h-50 gradient-custom">
-    <div className="row d-flex justify-content-center align-items-center h-50">
-      <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="email"
+                    id="typeEmailX"
+                    className="form-control form-control-lg"
+                    required
+                  />
+                  <label className="form-label" for="typeEmailX">
+                    Email
+                  </label>
+                </div>
 
-          <div className="card-body p-5 text-center">
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type={passwordType}
+                    id="typePasswordX"
+                    className="form-control form-control-lg"
+                    required
+                  />
+                  <label className="form-label" for="typePasswordX">
+                    Password
+                  </label>
+                </div>
 
-            <form className="mb-md-5 mt-md-1 pb-5 login-form" onSubmit={()=>{logIn()}} >
+                <div>
+                  <button className="btn eye" onClick={togglePassword}>
+                    {passwordType === "password" ? (
+                      <i className="bi bi-eye-slash"></i>
+                    ) : (
+                      <i className="bi bi-eye"></i>
+                    )}
+                  </button>
+                </div>
 
-              <h2 className="fw-bold mb-2 text-uppercase ">Login</h2>
-              <p className="text-white-50 mb-5">Please enter your E-mail and Password!</p>
+                <p className="small  pb-lg-2">
+                  <Link href="/forget">
+                    <a className="text-white-50" href="#!">
+                      Forgot password?
+                    </a>
+                  </Link>
+                </p>
 
-              <div className="form-outline form-white mb-4">
-                <input type="username" id="username" className="form-control form-control-lg" />
-                <label className="form-label" for="typeEmailX">Username</label>
-              </div>
+                <button
+                  className="btn btn-outline-warning btn-lg px-5 login-btn  "
+                  type="submit"
+                >
+                  Login
+                </button>
 
-              <div className="form-outline form-white mb-4">
-                <input type="password" id="password" className="form-control form-control-lg" />
-                <label className="form-label" for="typePasswordX">Password</label>
-              </div>
+                <div className="d-flex justify-content-center text-center mt-4 pt-1">
+                  <a href="#!" className="text-white">
+                    <i className="fab fa-facebook-f fa-lg"></i>
+                  </a>
+                  <a href="#!" className="text-white">
+                    <i className="fab fa-twitter fa-lg mx-4 px-2"></i>
+                  </a>
+                  <a href="#!" className="text-white">
+                    <i className="fab fa-google fa-lg"></i>
+                  </a>
+                </div>
 
-              <p className="small  pb-lg-2"><Link  href="/forget"><a className="text-white-50" href="#!">Forgot password?</a></Link></p>
-
-              <button className="btn btn-outline-light btn-lg px-5" type="submit" >Login</button>
-
-              <div className="d-flex justify-content-center text-center mt-4 pt-1">
-                <a href="#!" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
-                <a href="#!" className="text-white"><i className="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                <a href="#!" className="text-white"><i className="fab fa-google fa-lg"></i></a>
-              </div>
-
-          
-
-            <div>
-              <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a>
-              </p>
+                <div>
+                  <p className="mb-0">
+                    Don't have an account?{" "}
+                    <a href="#!" className="text-white-50 fw-bold">
+                      Sign Up
+                    </a>
+                  </p>
+                </div>
+              </form>
             </div>
-            </form>
-
           </div>
-
+        </div>
       </div>
-    </div>
-  </div>
-{/* </section> */}
 
- 
-
-{/* <div className ="container-fluid bg  ">
+      {/* <div className ="container-fluid bg  ">
     <div className ="row">
         <div className ="col-sm-4 boxplace">
           
@@ -94,12 +137,9 @@ function Login() {
     </div>
 </div> */}
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> 
-    
-</>
-  )
-  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    </>
+  );
 }
 
-export default Login
+export default Login;
