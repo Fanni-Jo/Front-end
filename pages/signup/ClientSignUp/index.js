@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-
+import axios from "axios";
+// import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ClientSignup() {
@@ -11,6 +12,39 @@ export default function ClientSignup() {
 
   // }
   // console.log(file)
+
+  const signUpClient = async (event) => {
+    
+    event.preventDefault();
+      await axios
+        .post("https://fanni-jo.herokuapp.com/api/signup/", {
+          username: event.target.username.value,
+          password: event.target.password.value,
+          re_password: event.target.re_password.value,
+          first_name:event.target.first_name.value,
+          last_name:event.target.last_name.value,
+          email:event.target.email.value,
+        }).then(async(res) => {
+            await axios.get(`https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`)
+            .then((res) => {
+                console.log(res)
+                axios.post("https://fanni-jo.herokuapp.com/api/signup/client", {
+                username: res.data.username.value,
+                gender: event.target.gender.value,
+                birthdate: event.target.birthdate.value,
+                phone_number:event.target.phoneNumber.value,
+                profile_picture:event.target.profilePicture
+            })
+            })
+            
+            console.log(res);
+            console.log(res.data);
+        }).catch(() => {
+            // toast.error("Please Make Sure All required Fields are filled out");
+          })
+          event.target.reset();
+
+  };
 
   const [passwordType, setPasswordType] = useState("password");
   const [show, setShow] = useState(false);
@@ -34,7 +68,7 @@ export default function ClientSignup() {
           <div className="row ">
             <div className="col-md-6 offset-md-3 borderform">
               <div className="signup-form">
-                <form className="mt-5 ">
+                <form className="mt-5 " onSubmit={(e)=>signUpClient(e)}>
                   <div className="row">
                     <h3 className="text-center ">Registration Form</h3>
 
@@ -47,7 +81,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="text"
-                        id="form6Example1"
+                        id="first_name"
                         className="form-control"
                         placeholder="Jack"
                         required
@@ -63,7 +97,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="text"
-                        id="form6Example2"
+                        id="last_name"
                         className="form-control"
                         placeholder="Nir"
                         required
@@ -79,7 +113,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="text"
-                        id="form6Example3"
+                        id="username"
                         className="form-control"
                         placeholder="JohnWick"
                         required
@@ -95,7 +129,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="email"
-                        id="form6Example5"
+                        id="email"
                         className="form-control"
                         placeholder="john13@gmail.com"
                         required
@@ -111,7 +145,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type={passwordType}
-                        id="form6Example3"
+                        id="password"
                         className="form-control "
                         placeholder="Enter your password"
                         required
@@ -127,7 +161,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type={passwordType}
-                        id="form6Example3"
+                        id="re_password"
                         className="form-control "
                         placeholder="Re-enter your password"
                         required
@@ -153,7 +187,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="text"
-                        id="form6Example3"
+                        id="phone_number"
                         className="form-control"
                         placeholder="+962"
                         required
@@ -169,7 +203,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="text"
-                        id="form6Example4"
+                        id="city"
                         className="form-control "
                         placeholder="Amman"
                         required
@@ -227,7 +261,7 @@ export default function ClientSignup() {
                       </label>
                       <input
                         type="file"
-                        id="imageFile"
+                        id="profilePicture"
                         name="files"
                         accept="image/*"
                         className="text-light  input-hub"
