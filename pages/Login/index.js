@@ -44,8 +44,7 @@ function Login() {
   const [show, setShow] = useState(false);
   const [loading,setloading]= useState(false)
 
-  const togglePassword =(evnt)=>{
-
+  const togglePassword = (evnt) => {
     evnt.preventDefault();
     setShow(!show);
     if(show===true){
@@ -64,6 +63,7 @@ function Login() {
     <>
 
 
+
   <div className="container-fluid py-2 h-50 gradient-custom">
     <div className="row d-flex justify-content-center align-items-center h-50 ">
       <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -78,10 +78,12 @@ function Login() {
                 <label className="form-label" for="typeEmailX">username</label>
               </div>
 
-              <div className="form-outline form-white mb-4">
-                <input type={passwordType} id="password" className="form-control form-control-lg" required/>
-                <label className="form-label" for="typePasswordX">Password</label>
-              </div>
+
+                <div className="form-outline form-white mb-4">
+                  <input type="text" id="username" className="form-control form-control-lg" required/>
+                  <label className="form-label" for="typeEmailX">username</label>
+                </div>
+
 
               <div >
               <button className="btn eye" onClick={togglePassword}>
@@ -97,10 +99,10 @@ function Login() {
 
             <div>
             <p className="pb-lg-2 mt-2">Don't have an account? <Link  href="/signup"><a href="!#" className="text-white-50 fw-bold" > Sign Up</a></Link></p>
-            </div>
-            </form>
 
+            </div>
           </div>
+
 
       </div>
     </div>
@@ -112,6 +114,7 @@ function Login() {
     
 </>
   )
+
 }
 
-export default Login
+export default Login;

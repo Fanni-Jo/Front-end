@@ -6,7 +6,5 @@ export function logIn(data){
     });
     }
 
-    // username
-    // password
-
+   
 export default logIn;    

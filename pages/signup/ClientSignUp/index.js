@@ -6,11 +6,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import {useRouter} from 'next/router'
 
 export default function ClientSignup() {
+
   const router = useRouter();
   const [islogin, setlogin] = useState(false);
   const [date, setDate] = useState();
   // const [token,seToken] = useState()
   // const config={headers:{'Authorization': `Bearer ${token}`}}
+
   console.log('date',date)
 
   const signUpClient = async (event) => {
@@ -31,15 +33,19 @@ export default function ClientSignup() {
             password: event.target.password.value,
           })
           .then(async (res) => {
+
             // localStorage.setItem("jwt", res.data.access);
             // seToken(res.data.access)
             // setlogin(true);
+
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
               )
               .then( async (id) => {
+
                 // localStorage.setItem("id", id.data.id);
+
                 await axios
                   .post("https://fanni-jo.herokuapp.com/api/signup/client", {
                     phone_number: event.target.phone_number.value,
@@ -47,11 +53,13 @@ export default function ClientSignup() {
                     birthdate: date,
                     gender: event.target.gender.value,
                     username: id.data.id
+
                   },{headers:{'Authorization': `Bearer ${res.data.access}`}})
                   .then(
                     console.log("client signup success"),
                     router.push('/Login')
                   )
+
                   .catch(console.log("client signup error"));
               })
           })

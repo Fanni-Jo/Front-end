@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+
 import {useRouter} from 'next/router'
 
 export default function serviceProviderSignup() {
@@ -12,6 +13,9 @@ export default function serviceProviderSignup() {
   const signUpHandler = async (event) => {
     event.preventDefault();
     event.target.first_name.focus()
+
+
+
     await axios
       .post("https://fanni-jo.herokuapp.com/api/signup/", {
         username: event.target.username.value,
@@ -28,14 +32,17 @@ export default function serviceProviderSignup() {
             password: event.target.password.value,
           })
           .then(async (res) => {
+
             // localStorage.setItem("jwt", res.data.access);
             seToken(res.data.access)
           
+
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
               )
               .then( async (id) => {
+
                 console.log("id", id.data);
                 await axios
                       .post("https://fanni-jo.herokuapp.com/api/signup/service-provider", {
@@ -68,15 +75,18 @@ export default function serviceProviderSignup() {
                          router.push('/Login')
                       )
 
+
           })
         console.log(res);
         console.log(res.data);
       })
       .catch(() => {
         toast.error("Username or Password is already registerd");
+
       })
     event.target.reset();
     })};
+
 
   const [passwordType, setPasswordType] = useState("password");
   const [show, setShow] = useState(false);
@@ -162,7 +172,9 @@ export default function serviceProviderSignup() {
 
               <div className="col-md-6 col-sm-12 col-lg-6 mb-3">
                 <label className="form-label text-light" for="form6Example3">Phone Number</label>
+
                 <input type="text" id="phone_number" className="form-control" placeholder="+962" defaultValue={'+962'} required/>
+
               </div>
               
               <div className="col-md-6 col-sm-12 col-lg-6 mb-3">

@@ -5,7 +5,7 @@ const ServiceProviders = async ((event) => {
     event.preventDefault();
     await 
     axios.get(
-        "https://fanni-jo.herokuapp.com/api/service_provider",
+        "https://fanni-jo.herokuapp.com/api/signup/service-provider",
         config
         )
     .then((res) => {
