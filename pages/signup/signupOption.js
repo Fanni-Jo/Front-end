@@ -14,7 +14,7 @@ export default function signupOption() {
 
             <form className="mb-md-5 mt-md-1 pb-5 login-form">
 
-              <h2 className="fw-bold mb-2 text-uppercase text-warning">Which are you?</h2>
+              <h2 className="fw-bold mb-2 text-uppercase text-warning">Who are you?</h2>
 
 
               <div className="col-md-6 offset-md-3 borderform text-center ">

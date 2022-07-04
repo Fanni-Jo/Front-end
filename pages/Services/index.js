@@ -17,11 +17,14 @@ import pic14 from "../src/img/portfolio/14.svg"
 import pic15 from "../src/img/portfolio/15.svg"
 import pic16 from "../src/img/portfolio/16.svg"
 
-import Navbar from "../Components/Navbar"
-
+import Link from "next/link"
 import Image from  'next/image'
 
+import { useThemeContext } from "../context/Theme"
+
 function Services() {
+const [iscategory, setCategory] = useThemeContext();
+
   return (
     <> 
     {/* <Navbar/> */}
@@ -37,12 +40,15 @@ function Services() {
                     <div className="col-lg-4 col-sm-6 mb-4">
                         {/* <!--  item 1--> */}
                         <div className="portfolio-item">
-                            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <Link href="/workers" >
+
+                            <a className="portfolio-link" data-bs-toggle="1" href="#">
                                 <div className="portfolio-hover">
-                                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                    {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
                                 <Image className="img-fluid" src={pic10} alt="..." />
                             </a>
+                        </Link>
                             <div className="portfolio-caption">
                                 <div className="portfolio-caption-heading">carpenter service</div>
                                 <div className="portfolio-caption-subheading text-muted">lets fix</div>
@@ -53,12 +59,16 @@ function Services() {
                         
                         {/* <!--  item 2--> */}
                         <div className="portfolio-item">
-                            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <Link href="/workers" >
+                            
+                            <a className="portfolio-link" data-bs-toggle="" href="#">
                                 <div className="portfolio-hover">
-                                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                    {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
-                                <Image className="img-fluid" src={pic11} alt="..." />
+                                <Image className="img-fluid" src={pic11} alt="..."   />
                             </a>
+                            </Link>
+                            
                             <div className="portfolio-caption">
                                 <div className="portfolio-caption-heading">painting and building service</div>
                                 <div className="portfolio-caption-subheading text-muted">lets fix</div>
@@ -68,12 +78,17 @@ function Services() {
                     <div className="col-lg-4 col-sm-6 mb-4">
                         {/* <!--  item 3--> */}
                         <div className="portfolio-item">
-                            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <Link href="/workers" >
+                            <a className="portfolio-link" data-bs-toggle="">
                                 <div className="portfolio-hover">
-                                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                    {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
                                 <Image className="img-fluid" src={pic12}  alt="..." />
                             </a>
+                            </Link>
+                            
+                            
+
                             <div className="portfolio-caption">
                                 <div className="portfolio-caption-heading">agricltural service</div>
                                 <div className="portfolio-caption-subheading text-muted">lets plant</div>
@@ -83,12 +98,14 @@ function Services() {
                     <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                         {/* <!--  item 4--> */}
                         <div className="portfolio-item">
-                            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                            <Link href="/workers" >
+                            <a className="portfolio-link" data-bs-toggle="" href="#">
                                 <div className="portfolio-hover">
-                                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                    {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
                                 <Image className="img-fluid" src={pic13} alt="..." />
                             </a>
+                            </Link>
                             <div className="portfolio-caption">
                                 <div className="portfolio-caption-heading">cleaned service</div>
                                 <div className="portfolio-caption-subheading text-muted">lets clean</div>
@@ -98,12 +115,14 @@ function Services() {
                     <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                         {/* <!--  item 5--> */}
                         <div className="portfolio-item">
-                            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                            <Link href="/workers"  >
+                            <a className="portfolio-link" data-bs-toggle="" href="#">
                                 <div className="portfolio-hover">
-                                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                                    {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
                                 <Image className="img-fluid" src={pic16} alt="..." />
                             </a>
+                            </Link>
                             <div className="portfolio-caption">
                                 <div className="portfolio-caption-heading">welding service</div>
                                 <div className="portfolio-caption-subheading text-muted">lets weld</div>
@@ -113,13 +132,18 @@ function Services() {
                     <div className="col-lg-4 col-sm-6">
                         {/* <!-- item 6--> */}
                         <div className="portfolio-item">
-                            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div className="portfolio-hover">
-                                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
-                                </div>
+                            <Link href="/workers"  >
+
+
+                            <a className="portfolio-link" data-bs-toggle="" href="#" >
+                                {/* <div className="portfolio-hover"> */}
+                                    {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
+                                {/* </div> */}
                                 
                                 <Image className="img-fluid" src={pic15} alt="..." />
                             </a>
+                            </Link>
+
                             <div className="portfolio-caption">
                                 <div className="portfolio-caption-heading">plumbing service</div>
                                 <div className="portfolio-caption-subheading text-muted">lets fix</div>
