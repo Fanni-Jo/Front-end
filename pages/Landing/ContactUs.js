@@ -1,6 +1,49 @@
-
+import axios from 'axios'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 function ContactUs() {
+    const contactUsHandler = async (e) => {
+        e.preventDefault();  
+        const formData = {
+          name:  e.target.name.value,
+          email:  e.target.email.value,
+          subject: e.target.subject.value,
+          message:  e.target.message.value,
+        };
+
+        await axios.post("https://fanni-jo.herokuapp.com/contact-us/", formData)
+        .then(res => {
+            if (res.data.status === 200 && res.data.message === "success") {
+                toast.success("Message sent successfully")
+
+                alert("Success")
+            }
+        toast.success("Message sent successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+     
+            });
+          
+
+
+        })
+        .catch(e => {
+            
+          console.log("Message error", e)
+            toast.error("Message error")
+  
+        }).finally(() => {
+            console.log('hey')
+
+          
+        })
+    }
+
   return (
     <section class="page-section" id="contact">
     <div class="container">
@@ -10,7 +53,7 @@ function ContactUs() {
         </div>
 
         {/* <!-- to get an API token!--> */}
-        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN" onSubmit={contactUsHandler}>
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -26,8 +69,8 @@ function ContactUs() {
                     </div>
                     <div class="form-group mb-md-0">
                         {/* <!-- Phone number input--> */}
-                        <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        <input class="form-control" id="subject" type="text" placeholder="Subject of your message *" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="subject:required">A Subject is required.</div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -38,25 +81,8 @@ function ContactUs() {
                     </div>
                 </div>
             </div>
-            {/* <!-- Submit success message--> */}
-            {/* <!----> */}
-            {/* <!-- This is what your users will see when the form--> */}
-            {/* <!-- has successfully submitted--> */}
-            <div class="d-none" id="submitSuccessMessage">
-                <div class="text-center text-white mb-3">
-                    <div class="fw-bolder">Form submission successful!</div>
-                    {/* To activate this form, sign up at */}
-                    <br />
-                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                </div>
-            </div>
-            {/* <!-- Submit error message--> */}
-            {/* <!----> */}
-            {/* <!-- This is what your users will see when there is--> */}
-            {/* <!-- an error submitting the form--> */}
-            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-            {/* <!-- Submit Button--> */}
-            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+            
+            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
         </form>
     </div>
 </section>

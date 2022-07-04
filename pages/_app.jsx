@@ -8,7 +8,8 @@ import {Helmet} from "react-helmet";
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer'
 import "bootstrap-icons/font/bootstrap-icons.json"
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from "./context/Theme";
 
 export default function MyApp({ Component, pageProps }) {
   // useEffect(()=>{
@@ -34,13 +35,11 @@ export default function MyApp({ Component, pageProps }) {
     type="text/javascript" />
        
     </Helmet>
+  <ThemeProvider>
     <Navbar/>
-
-  
-
-
-  <Component {...pageProps} />
-  <Footer/>
+    <Component {...pageProps} />
+    <Footer/>
+  </ThemeProvider>
 
 
 

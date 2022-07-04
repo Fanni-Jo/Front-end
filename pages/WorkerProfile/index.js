@@ -1,8 +1,9 @@
 import Image from "next/image"
 import pic13 from "../src/img/portfolio/15.svg"
+import Comments from "./comments"
 const Profile = () => {
     return ( 
-
+<>
         <div className="container">
     <div className="main-body my-2">    
           <div className="row gutters-sm">
@@ -83,44 +84,6 @@ const Profile = () => {
                 </div>
               </div>
 
-              <div className="col-md-13">
-              <div className="card mb-3">
-                <div className="card-body">
-                <div className="row">
-                <div className="col-sm-12 text-dark">
-                    <h6 className="fw-bold">description</h6>
-                        <p>a pro technicahn with alot of experience in the field </p>
-                </div>
-                </div>
-                </div>
-                </div>
-              </div>
-
-              {/* <div className="col-md-13">
-              <div className="card mb-3">
-                <div className="card-body">
-                <div className="row">
-                <div className="col-sm-6 text-dark">
-                <h6 className="fw-bold">previous work</h6>
-                <div class="card" >
-                <div class="card-body">
-                <Image class="card-img-top" src={pic13} alt="Card image cap"/>
-                
-                </div>
-                </div>
-                <div className="col-sm-6 text-dark">
-                <div class="card">
-                <div class="card-body">
-                <Image class="card-img-top" src={pic13} alt="Card image cap"/>
-                </div>
-     
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-              </div> */}
     <div class="card-group">
 
   <div class="card me-1">
@@ -173,6 +136,9 @@ const Profile = () => {
                 </div>
                 </div>
             
+
+            <Comments/>
+</>
          );
         }
 

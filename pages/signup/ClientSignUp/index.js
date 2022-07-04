@@ -1,54 +1,67 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ClientSignup() {
-  // const [file, setFile] = useState([]);
-  // function handleChange(e) {
-  //     console.log(e.target.files[0].name);
-  //     setFile(...file,URL.createObjectURL(e.target.files[0]));
-
-  // }
-  // console.log(file)
+  
+  const [islogin, setlogin] = useState(false);
+  const [date, setDate] = useState();
+  // const [token,seToken] = useState()
+  // const config={headers:{'Authorization': `Bearer ${token}`}}
+  console.log('date',date)
 
   const signUpClient = async (event) => {
-    
     event.preventDefault();
-      await axios
-        .post("https://fanni-jo.herokuapp.com/api/signup/", {
-          username: event.target.username.value,
-          password: event.target.password.value,
-          re_password: event.target.re_password.value,
-          first_name:event.target.first_name.value,
-          last_name:event.target.last_name.value,
-          email:event.target.email.value,
-        }).then(async(res) => {
-            await axios.get(`https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`)
-            .then((res) => {
-                console.log(res)
-                axios.post("https://fanni-jo.herokuapp.com/api/signup/client", {
-                username: res.data.username.value,
-                gender: event.target.gender.value,
-                birthdate: event.target.birthdate.value,
-                phone_number:event.target.phoneNumber.value,
-                profile_picture:event.target.profilePicture
-            })
-            })
-            
-            console.log(res);
-            console.log(res.data);
-        }).catch(() => {
-            // toast.error("Please Make Sure All required Fields are filled out");
+    await axios
+      .post("https://fanni-jo.herokuapp.com/api/signup/", {
+        username: event.target.username.value,
+        password: event.target.password.value,
+        re_password: event.target.re_password.value,
+        first_name: event.target.first_name.value,
+        last_name: event.target.last_name.value,
+        email: event.target.email.value,
+      })
+      .then(async (res) => {
+        await axios
+          .post("https://fanni-jo.herokuapp.com/token/", {
+            username: event.target.username.value,
+            password: event.target.password.value,
           })
-          event.target.reset();
-
+          .then(async (res) => {
+            localStorage.setItem("jwt", res.data.access);
+            // seToken(res.data.access)
+            setlogin(true);
+            await axios
+              .get(
+                `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
+              )
+              .then( async (id) => {
+                localStorage.setItem("id", id.data.id);
+                await axios
+                  .post("https://fanni-jo.herokuapp.com/api/signup/client", {
+                    phone_number: event.target.phone_number.value,
+                    profile_picture: event.target.profile_picture,
+                    birthdate: date,
+                    gender: event.target.gender.value,
+                    username: id.data.id
+                  },{headers:{'Authorization': `Bearer ${res.data.access}`}})
+                  .then(console.log("client signup success"))
+                  .catch(console.log("client signup error"));
+              })
+          })
+        console.log(res);
+        console.log(res.data);
+      })
+      .catch(() => {
+        toast.error("Username or Password is already registerd");
+      });
+    event.target.reset();
   };
 
   const [passwordType, setPasswordType] = useState("password");
   const [show, setShow] = useState(false);
-  const [date, setDate] = useState(new Date());
 
   const togglePassword = (evnt) => {
     evnt.preventDefault();
@@ -68,7 +81,7 @@ export default function ClientSignup() {
           <div className="row ">
             <div className="col-md-6 offset-md-3 borderform">
               <div className="signup-form">
-                <form className="mt-5 " onSubmit={(e)=>signUpClient(e)}>
+                <form className="mt-5 " onSubmit={(e) => signUpClient(e)}>
                   <div className="row">
                     <h3 className="text-center ">Registration Form</h3>
 
@@ -213,25 +226,25 @@ export default function ClientSignup() {
                       <label
                         className="form-label text-light"
                         for="form6Example7"
+                        id="birthdate"
                       >
                         Birth Date
                       </label>
-                      <DatePicker 
+                      <DatePicker
                         selected={date}
-                        onChange={(date) => setDate(date)}
+                        onChange={(date) => setDate(date.getFullYear() + "-" + (date.getMonth()) + "-" + date.getDate())}
+                        dateFormat="yyyy-MM-dd"
                         peekNextMonth
-                        showMonthDropdown
-                        showYearDropdown
                         dropdownMode="select"
                         className="form-control"
                       />
                     </div>
-                    
 
                     <div className="col-xs-12 col-sm-12  col-md-12 col-lg-6 mb-3">
                       <label
                         className="form-label text-light"
                         for="form6Example7"
+                        id="gender"
                       >
                         Gender
                       </label>
@@ -241,35 +254,35 @@ export default function ClientSignup() {
                         className="p-2 dropdown "
                         required
                       >
-                        <option className="option" value="plumbing">
+                        <option className="option" value="MALE">
                           Male
                         </option>
-                        <option className="option" value="carpinting">
+                        <option className="option" value="FEMALE">
                           Female
                         </option>
                       </select>
                     </div>
-
                   </div>
 
                   <div className="col-md-12 col-sm-12 col-lg-6 mb-3 profile-image  ">
-                      <label
-                        className="form-label text-light"
-                        for="form6Example7"
-                      >
-                        Profile Image
-                      </label>
-                      <input
-                        type="file"
-                        id="profilePicture"
-                        name="files"
-                        accept="image/*"
-                        className="text-light  input-hub"
-                        list
-                        multiple
-                      />
-                      <div id="display-image"></div>
-                    </div>
+                    <label
+                      className="form-label text-light"
+                      for="form6Example7"
+                      id="profile_picture"
+                    >
+                      Profile Image
+                    </label>
+                    <input
+                      type="file"
+                      id="profilePicture"
+                      name="files"
+                      accept="image/*"
+                      className="text-light  input-hub"
+                      list
+                      multiple
+                    />
+                    <div id="display-image"></div>
+                  </div>
                   <button
                     type="submit"
                     className="btn btn-dark btn-block mb-4 registerbtn"
