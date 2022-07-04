@@ -1,13 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import {useRouter} from 'next/router'
 
 export default function serviceProviderSignup() {
-  
-  const [islogin, setlogin] = useState(false);
+  const router =  useRouter();
   const [token,seToken] = useState()
-  const config={headers:{'Authorization': `Bearer ${token}`}}
-  const [category, setCategory] = useState("");
+
+
 
   const signUpHandler = async (event) => {
     event.preventDefault();
@@ -28,41 +28,46 @@ export default function serviceProviderSignup() {
             password: event.target.password.value,
           })
           .then(async (res) => {
-            localStorage.setItem("jwt", res.data.access);
+            // localStorage.setItem("jwt", res.data.access);
             seToken(res.data.access)
-            setlogin(true);
+          
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
               )
               .then( async (id) => {
-                localStorage.setItem("id", id.data);
-                await axios.get('https://fanni-jo.herokuapp.com/api/category/')
-                .then(async (categories)=>{ 
-                  await categories.data.map(async (obj)=>{
-                    if (obj.title===event.target.services.value){
-                      setCategory(obj.id)
-                      console.log(category)
-                      return obj.id
-                  }
-                  }).then(async()=>{
-                    await axios
-                    .post("https://fanni-jo.herokuapp.com/api/signup/service-provider", {
-                      phone: event.target.phone_number.value,
-                      profile_picture: null || event.target.profile_picture,
-                      phone2:null,
-                      years_of_exp:event.target.years_of_exp.value,
-                      address:event.target.city.value,
-                      media:null||event.target.imageFile,
-                      gender: event.target.gender.value,
-                      username: localStorage.getItem("id"),
-                      category: category
-                      
-                    },config)
-                  })
-                }).catch(
-                  console.log("api service-provider error")
-              )
+                console.log("id", id.data);
+                await axios
+                      .post("https://fanni-jo.herokuapp.com/api/signup/service-provider", {
+                        phone: event.target.phone_number.value,
+                        profile_picture: null || event.target.profile_picture,
+                        phone2: "",
+                        years_of_exp:event.target.years_of_exp.value,
+                        address:event.target.city.value,
+                        media:null,
+                        gender: event.target.gender.value,
+                        username: id.data.id,
+                        category: event.target.services.value,
+                        
+                      },{headers:{'Authorization': `Bearer ${res.data.access}`}}).catch(
+
+                        toast.error('Worker Signup Failed')
+                        // console.log("error",{
+                        //   phone: event.target.phone_number.value,
+                        //   profile_picture: null || event.target.profile_picture,
+                        //   phone2: "",
+                        //   years_of_exp:event.target.years_of_exp.value,
+                        //   address:event.target.city.value,
+                        //   media:null||event.target.imageFile,
+                        //   gender: event.target.gender.value,
+                        //   username: id.data.id,
+                        //   category: event.target.services.value,
+                        // }  
+                        // )
+                      ).then(       
+                         router.push('/Login')
+                      )
+
           })
         console.log(res);
         console.log(res.data);
@@ -70,7 +75,7 @@ export default function serviceProviderSignup() {
       .catch(() => {
         toast.error("Username or Password is already registerd");
       })
-    // event.target.reset();
+    event.target.reset();
     })};
 
   const [passwordType, setPasswordType] = useState("password");
@@ -140,12 +145,12 @@ export default function serviceProviderSignup() {
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mb-3  ">
               <label className="form-label mr-3 text-light " for="form6Example6">Service Categories</label>
                 <select id="services" name="services" className="p-2 dropdown " required>
-                  <option className = "option" value="Plumbing">Plumbing</option>
-                  <option className = "option" value="Carpinting">Carpinting</option>
-                  <option className = "option" value="Cleaning">Cleaning</option>
-                  <option className = "option" value="Welding">Welding</option>
-                  <option className = "option" value="Agriculturing">Agriculturing</option>
-                  <option className = "option" value="Building and Construction">Building and Construction</option>
+                  <option className = "option" value={2}>Plumbing</option>
+                  <option className = "option" value={5}>Carpinting</option>
+                  <option className = "option" value={6}>Cleaning</option>
+                  <option className = "option" value={7}>Welding</option>
+                  <option className = "option" value={8}>Agriculturing</option>
+                  <option className = "option" value={9}>Building and Construction</option>
                 </select>
               </div>
 

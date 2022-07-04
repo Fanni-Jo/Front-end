@@ -3,9 +3,10 @@ import DatePicker from "react-datepicker";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
+import {useRouter} from 'next/router'
 
 export default function ClientSignup() {
-  
+  const router = useRouter();
   const [islogin, setlogin] = useState(false);
   const [date, setDate] = useState();
   // const [token,seToken] = useState()
@@ -30,15 +31,15 @@ export default function ClientSignup() {
             password: event.target.password.value,
           })
           .then(async (res) => {
-            localStorage.setItem("jwt", res.data.access);
+            // localStorage.setItem("jwt", res.data.access);
             // seToken(res.data.access)
-            setlogin(true);
+            // setlogin(true);
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
               )
               .then( async (id) => {
-                localStorage.setItem("id", id.data.id);
+                // localStorage.setItem("id", id.data.id);
                 await axios
                   .post("https://fanni-jo.herokuapp.com/api/signup/client", {
                     phone_number: event.target.phone_number.value,
@@ -47,7 +48,10 @@ export default function ClientSignup() {
                     gender: event.target.gender.value,
                     username: id.data.id
                   },{headers:{'Authorization': `Bearer ${res.data.access}`}})
-                  .then(console.log("client signup success"))
+                  .then(
+                    console.log("client signup success"),
+                    router.push('/Login')
+                  )
                   .catch(console.log("client signup error"));
               })
           })
@@ -76,7 +80,7 @@ export default function ClientSignup() {
 
   return (
     <>
-      <div className=" signup">
+      <div className="signup">
         <div className="container register-container ">
           <div className="row ">
             <div className="col-md-6 offset-md-3 borderform">
@@ -204,6 +208,8 @@ export default function ClientSignup() {
                         className="form-control"
                         placeholder="+962"
                         required
+                        defaultValue="+962"
+
                       />
                     </div>
 
