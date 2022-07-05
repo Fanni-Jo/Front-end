@@ -123,10 +123,11 @@ function workers() {
                         <div class="card-content">
                           <h4 class="card-title">
                             {" "}
+                            
                             {worker.first_name + " " + worker.last_name}
                           </h4>
 
-                          <p class="">{worker.years_of_exp}</p>
+                          <p class="">Years of Experience: {worker.years_of_exp}</p>
                         </div>
                         <div class="card-read-more">
                           <Link href={`/WorkerProfile/${worker.username}`}>
