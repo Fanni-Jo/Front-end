@@ -82,7 +82,7 @@ const Commit = () => {
 			<div class="col-xs-12 col-sm-6 fl_icon">
 				<div class="form-group fl_icon">
 					<div class="icon "><Image src={pic13}/></div>
-					<input class="form-input" type="text" placeholder="Your email"/>
+					<input class="form-input" type="email" placeholder="Your email"/>
 				</div>
 			</div>
 			<div class="col-xs-12">									

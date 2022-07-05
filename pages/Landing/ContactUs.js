@@ -14,31 +14,21 @@ function ContactUs() {
 
         await axios.post("https://fanni-jo.herokuapp.com/contact-us/", formData)
         .then(res => {
-            if (res.data.status === 200 && res.data.message === "success") {
-                toast.success("Message sent successfully")
+            console.log('success', res)
 
-                alert("Success")
-            }
-        toast.success("Message sent successfully", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-     
-            });
-          
+
 
 
         })
         .catch(e => {
             
-          console.log("Message error", e)
-            toast.error("Message error")
+        //   console.log("Message error", e)
+            
+            alert('Message has been successfully sent')
+            
   
         }).finally(() => {
-            console.log('hey')
+            e.target.reset()
 
           
         })

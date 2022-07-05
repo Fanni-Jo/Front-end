@@ -3,30 +3,27 @@ import pic13 from "../src/img/portfolio/15.svg";
 import useSWR from "swr";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useThemeContext } from "../context/Theme"
+import { useStateContext } from "../context/categoryState"
+import Link from "next/link";
 
-// async function axiosFunc(url) {
-//   const response = await fetch(url);
+import { useSpContext } from "../context/Serviceproviders"
 
-//   return data.json();
-// }
 
 function workers() {
   const [data, setData] = useState([]);
-  const [iscategory, setCategory] = useThemeContext();
+  // const [userData, setUserData] = useState([]);
 
-  // const workersHandler = async (e) => {
-  //     e.preventDefault();
-  //     const formData = {
-  //       username:  e.target.username.value,
-  //       password:  e.target.password.value,
-  //     };
+  const [iscategory, setCategory] = useStateContext();
+
+  const [serviceProviders, setServiceProviders] = useSpContext();
+
 
   const GetData = async () => {
     await axios
       .get("https://fanni-jo.herokuapp.com/api/signup/service-provider")
       .then((res) => {
         setData(res.data);
+        setServiceProviders(res.data);
         console.log("data", res.data);
       })
       .catch((e) => {
@@ -38,59 +35,63 @@ function workers() {
   }, []);
   console.log("data", data);
   console.log(iscategory)
-  // const url = 'https://fanni-jo.herokuapp.com/api/signup/client'
-  // const { data, error } = useSWR(url, axiosFunc);
-  // if (error) return <div>failed to load</div>
-  // if (!data) return <div>loading...</div>
-    const category = []
-    data.map((item)=>{
-    if (item.category == iscategory){
-        category.push(item)
+
+
+
+  const category = []
+  data.map((item) => {
+    if (item.category == iscategory) {
+      category.push(item)
+
     }
 
-    
   })
-    console.log("category", category);
+  console.log("category", category);
 
 
 
-  
+  console.log("data", data);
+  // console.log("userData", userData);
+
+  const Categories = {
+
+    "2": "Plumbers",
+    "5": "Carpenters",
+    "6": "Cleaners",
+    "7": "Welders",
+    "8": "Farmers",
+    "9": "Construction Workers",
+
+  }
+
 
   return (
-    // {data.map((item,index)=>{
-    //     return(
-    //         <div class="row">
-    //             <div class="col-md-4">
-    //                 <div class="card">
-    //                     <div class="card-body">
-    //                         <h5 class="card-title">{item.username.data}</h5>
-    //                         <p class="card-text">{item.description}</p>
-    //                         <a href="#" class="btn btn-primary">See Profile</a>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     )
-    // }
-    // )}
+
+
 
     <>
 
-          <section class="wrapper">
-        
-
-            <div class="container-fostrap">
-              <div>
-                <h1 class="heading">Service Providers</h1>
-              </div>
-
-              <div class="content">
-                <div class="container">
-                  <div class="row">
+      <section class="wrapper">
 
 
-                  {category.map((data, key) => {
-    return (
+        <div class="container-fostrap">
+          <div>
+            <h1 class="heading">{Categories[iscategory]}</h1>
+          </div>
+
+          <div class="content">
+            <div class="container">
+              <div class="row">
+
+
+                {category.map((worker, key) => {
+
+
+
+
+                  
+
+                  return (
                     <div class="col-xs-12 col-sm-4">
                       <div class="card">
                         <a
@@ -121,31 +122,33 @@ function workers() {
                         </div>
                         <div class="card-content">
                           <h4 class="card-title">
-                              {" "}
-                               {data.username}
+                            {" "}
+                            {worker.first_name + " " + worker.last_name}
                           </h4>
-                 
-                          <p class="">{data.category}</p>
+
+                          <p class="">{worker.years_of_exp}</p>
                         </div>
                         <div class="card-read-more">
-                          <a
-                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"
-                            class="btn btn-link btn-block"
-                          >
-                            Read More
-                          </a>
+                          <Link href={`/WorkerProfile/${worker.username}`}>
+                            <a
+                              href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"
+                              class="btn btn-link btn-block"
+                            >
+                              Read More
+                            </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
-                    );
-})}
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
-                    
+          </div>
+        </div>
 
-          </section>
+
+      </section>
 
     </>
   );
