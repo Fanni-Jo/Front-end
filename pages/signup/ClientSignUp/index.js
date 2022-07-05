@@ -32,6 +32,7 @@ export default function ClientSignup() {
             username: event.target.username.value,
             password: event.target.password.value,
           })
+
           .then(async (res) => {
 
             // localStorage.setItem("jwt", res.data.access);
@@ -50,7 +51,7 @@ export default function ClientSignup() {
                   .post("https://fanni-jo.herokuapp.com/api/signup/client", {
                     phone_number: event.target.phone_number.value,
                     profile_picture: event.target.profile_picture,
-                    birthdate: date,
+                    birthdate: null,
                     gender: event.target.gender.value,
                     username: id.data.id
 
@@ -65,7 +66,7 @@ export default function ClientSignup() {
           })
         console.log(res);
         console.log(res.data);
-      })
+      }).catch(console.log('username already exists'),alert('Username already exists'))
       .catch(() => {
         toast.error("Username or Password is already registerd");
       });
@@ -86,6 +87,13 @@ export default function ClientSignup() {
     }
   };
 
+  const validatePassword = (event)=>{
+    event.preventDefault();
+    if(event.target.password.value!==event.target.re_password.value){
+      alert('Password does not match')
+    }
+  }
+
   return (
     <>
       <div className="signup">
@@ -93,7 +101,7 @@ export default function ClientSignup() {
           <div className="row ">
             <div className="col-md-6 offset-md-3 borderform">
               <div className="signup-form">
-                <form className="mt-5 " onSubmit={(e) => signUpClient(e)}>
+                <form className="mt-5 " onSubmit={(e) => {signUpClient(e),validatePassword(e)}}>
                   <div className="row">
                     <h3 className="text-center ">Registration Form</h3>
 
@@ -110,6 +118,7 @@ export default function ClientSignup() {
                         className="form-control"
                         placeholder="Jack"
                         required
+
                       />
                     </div>
 
@@ -174,6 +183,7 @@ export default function ClientSignup() {
                         className="form-control "
                         placeholder="Enter your password"
                         required
+                        minLength="8"
                       />
                     </div>
 
@@ -190,6 +200,8 @@ export default function ClientSignup() {
                         className="form-control "
                         placeholder="Re-enter your password"
                         required
+                        minLength="8"
+
                       />
                     </div>
 
@@ -241,16 +253,18 @@ export default function ClientSignup() {
                         className="form-label text-light"
                         for="form6Example7"
                         id="birthdate"
+
                       >
                         Birth Date
                       </label>
                       <DatePicker
                         selected={date}
-                        onChange={(date) => setDate(date.getFullYear() + "-" + (date.getMonth()) + "-" + date.getDate())}
+                        onChange={(date) => setDate(date)}
                         dateFormat="yyyy-MM-dd"
                         peekNextMonth
                         dropdownMode="select"
                         className="form-control"
+                        
                       />
                     </div>
 

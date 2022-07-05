@@ -11,6 +11,11 @@ import "bootstrap-icons/font/bootstrap-icons.json"
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from "./context/Theme";
 
+import { StateProvider } from "./context/categoryState";
+
+import { ServiceProvider } from "./context/Serviceproviders";
+
+
 export default function MyApp({ Component, pageProps }) {
   // useEffect(()=>{
   //   import("bootstrap/dist/js/bootstrap");
@@ -35,11 +40,15 @@ export default function MyApp({ Component, pageProps }) {
     type="text/javascript" />
        
     </Helmet>
+<ServiceProvider>
+    <StateProvider>
   <ThemeProvider>
     <Navbar/>
     <Component {...pageProps} />
     <Footer/>
   </ThemeProvider>
+  </StateProvider>
+  </ServiceProvider>
 
 
 

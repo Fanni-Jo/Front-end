@@ -20,15 +20,13 @@ import pic16 from "../src/img/portfolio/16.svg"
 import Link from "next/link"
 import Image from  'next/image'
 
-import { useThemeContext } from "../context/Theme"
+import { useStateContext } from "../context/categoryState"
 
 function Services() {
-const [iscategory, setCategory] = useThemeContext();
-
+const [iscategory, setCategory] = useStateContext();
   return (
     <> 
-    {/* <Navbar/> */}
-    {/* NOTE HOW TO ERASE THE NAVBAR OR MAKE IT APEAR IN ALL PAGES WITHAT APPEAR IN THE Components */}
+    
 <section className="page-section bg-light" id="services">
            
             <div className="container">
@@ -46,7 +44,7 @@ const [iscategory, setCategory] = useThemeContext();
                                 <div className="portfolio-hover">
                                     {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
-                                <Image className="img-fluid" src={pic10} alt="..." />
+                                <Image className="img-fluid" src={pic10} alt="..." onClick={()=>{setCategory(5)}}/>
                             </a>
                         </Link>
                             <div className="portfolio-caption">
@@ -65,7 +63,7 @@ const [iscategory, setCategory] = useThemeContext();
                                 <div className="portfolio-hover">
                                     {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
-                                <Image className="img-fluid" src={pic11} alt="..."   />
+                                <Image className="img-fluid" src={pic11} alt="..."  onClick={()=>{setCategory(9)}} />
                             </a>
                             </Link>
                             
@@ -83,7 +81,7 @@ const [iscategory, setCategory] = useThemeContext();
                                 <div className="portfolio-hover">
                                     {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
-                                <Image className="img-fluid" src={pic12}  alt="..." />
+                                <Image className="img-fluid" src={pic12}  alt="..." onClick={()=>{setCategory(8)}}/>
                             </a>
                             </Link>
                             
@@ -103,7 +101,7 @@ const [iscategory, setCategory] = useThemeContext();
                                 <div className="portfolio-hover">
                                     {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
-                                <Image className="img-fluid" src={pic13} alt="..." />
+                                <Image className="img-fluid" src={pic13} alt="..." onClick={()=>{setCategory(6)}} />
                             </a>
                             </Link>
                             <div className="portfolio-caption">
@@ -120,7 +118,7 @@ const [iscategory, setCategory] = useThemeContext();
                                 <div className="portfolio-hover">
                                     {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 </div>
-                                <Image className="img-fluid" src={pic16} alt="..." />
+                                <Image className="img-fluid" src={pic16} alt="..." onClick={()=>{setCategory(7)}}/>
                             </a>
                             </Link>
                             <div className="portfolio-caption">
@@ -140,7 +138,7 @@ const [iscategory, setCategory] = useThemeContext();
                                     {/* <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div> */}
                                 {/* </div> */}
                                 
-                                <Image className="img-fluid" src={pic15} alt="..." />
+                                <Image className="img-fluid" src={pic15} alt="..." onClick={()=>{setCategory(2)}} />
                             </a>
                             </Link>
 

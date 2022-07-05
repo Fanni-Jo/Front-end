@@ -80,14 +80,13 @@ function Login() {
 
 
                 <div className="form-outline form-white mb-4">
-                  <input type="text" id="username" className="form-control form-control-lg" required/>
-                  <label className="form-label" for="typeEmailX">username</label>
+                  <input type={passwordType} id="password" className="form-control form-control-lg" required/>
+                  <label className="form-label" for="typeEmailX">Password</label>
                 </div>
 
 
               <div >
               <button className="btn eye" onClick={togglePassword}>
-                     { passwordType==="password"? <i className="bi bi-eye-slash"></i> :<i className="bi bi-eye"></i> }
                      </button>
               </div>
 
@@ -101,6 +100,7 @@ function Login() {
             <p className="pb-lg-2 mt-2">Don't have an account? <Link  href="/signup"><a href="!#" className="text-white-50 fw-bold" > Sign Up</a></Link></p>
 
             </div>
+            </form>
           </div>
 
 

@@ -5,7 +5,7 @@ import { useThemeContext } from "../context/Theme"
 import NavLogout from "./NavLogout"
 
 function Navbar() {
-  const [islogin, setlogin] = useThemeContext();
+  const [islogin, setlogin] = useThemeContext(false);
   const [user, setuser] = useThemeContext();
   return (
 <nav className="navbar navbar-expand-lg  navbar-dark bg-dark  fixed-top">
@@ -79,13 +79,7 @@ function Navbar() {
         {!islogin && <NavLogin/>}
         {islogin && <p className='text-light m-2'>{user}</p>}
         {islogin && <NavLogout/>}
-        {/* <div
-            className="btn-group mr-2 me-2"
-            role="group"
-            aria-label="First group">
-          <button className="btn btn-warning btn-sm "><Link  href='/Login'><a className="text-dark text-decoration-none ">Login</a></Link></button>
-          <button className="btn btn-warning btn-sm"><Link  href='/signup'><a className="text-dark text-decoration-none ">Signup</a></Link></button>
-        </div> */}
+
       </nav>
     );
   

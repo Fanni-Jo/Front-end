@@ -46,6 +46,8 @@ export default function serviceProviderSignup() {
                 console.log("id", id.data);
                 await axios
                       .post("https://fanni-jo.herokuapp.com/api/signup/service-provider", {
+                        first_name: event.target.first_name.value,
+                        last_name: event.target.last_name.value,
                         phone: event.target.phone_number.value,
                         profile_picture: null || event.target.profile_picture,
                         phone2: "",
