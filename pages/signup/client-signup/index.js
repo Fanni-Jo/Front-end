@@ -10,8 +10,7 @@ export default function ClientSignup() {
   const router = useRouter();
   const [islogin, setlogin] = useState(false);
   const [date, setDate] = useState();
-  // const [token,seToken] = useState()
-  // const config={headers:{'Authorization': `Bearer ${token}`}}
+
 
   console.log('date',date)
 
@@ -35,17 +34,13 @@ export default function ClientSignup() {
 
           .then(async (res) => {
 
-            // localStorage.setItem("jwt", res.data.access);
-            // seToken(res.data.access)
-            // setlogin(true);
+
 
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
               )
               .then( async (id) => {
-
-                // localStorage.setItem("id", id.data.id);
 
                 await axios
                   .post("https://fanni-jo.herokuapp.com/api/signup/client", {

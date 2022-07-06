@@ -1,9 +1,7 @@
 import '../style/index.css';
 import '../style/register.css';
-import script from 'next/script';
+
 import Head from 'next/head';
-// import 'bootstrap/dist/css/bootstrap.css';
-import { useEffect } from 'react';
 import {Helmet} from "react-helmet";
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer'
@@ -17,9 +15,6 @@ import { ServiceProvider } from "./context/Serviceproviders";
 
 
 export default function MyApp({ Component, pageProps }) {
-  // useEffect(()=>{
-  //   import("bootstrap/dist/js/bootstrap");
-  // },[])
 
 
 

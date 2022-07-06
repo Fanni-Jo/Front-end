@@ -90,7 +90,7 @@ function Login() {
                      </button>
               </div>
 
-              <p className="small  pb-lg-2"><Link  href="/forget"><a href="!#" className="text-white-50" >Forgot password?</a></Link></p>
+              <p className="small  pb-lg-2"><Link  href="/forget-password"><a href="!#" className="text-white-50" >Forgot password?</a></Link></p>
   
               <button className="btn btn-outline-warning btn-lg px-5 login-btn  " type="submit" disabled={loading} > Login</button>
 
