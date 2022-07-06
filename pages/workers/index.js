@@ -29,7 +29,7 @@ function Workers() {
   };
   useEffect(() => {
     GetData();
-  }, []);
+  });
   // console.log("data", data);
   // console.log(iscategory)
 
