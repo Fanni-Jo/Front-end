@@ -1,10 +1,12 @@
 import { useThemeContext } from "../context/Theme";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const ReviewFormWeb = () => {
   const [islogin, setlogin] = useThemeContext();
   const [user, setuser] = useThemeContext();
+  const router = useRouter();
   const reviewCreator = async (e) => {
     e.preventDefault();
     await axios.get("https://fanni-jo.herokuapp.com/api/users/").then((res) => {
@@ -16,7 +18,7 @@ const ReviewFormWeb = () => {
               username: item.id,
               text: e.target.text.value,
             })
-            .then(e.target.reset(), alert("Thank you for your comment"));
+            .then(e.target.reset(), router.push("/"));
         }
       });
     });

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useSpContext } from "../context/Serviceproviders";
 import Image from "next/image";
 import defaultworker from "../src/img/defaultworker.jpg";
-
 function Workers() {
   const [data, setData] = useState([]);
   // const [userData, setUserData] = useState([]);
@@ -57,8 +56,8 @@ function Workers() {
       <div
         className="text-center bg-image container-fluid "
         style={{
-          backgroundImage:
-            'url("https://th.bing.com/th/id/R.04502c0947d84cfd6f79474aebb8464d?rik=ExtfKlWbHufsvg&riu=http%3a%2f%2frusselbock.co.uk%2fwp-content%2fuploads%2f2016%2f10%2fimg_1.jpg&ehk=O%2fKXrPa2hwGhIS8%2fTxurDJ%2f137MyB9C9pBPpqGs%2bKHg%3d&risl=&pid=ImgRaw&r=0")',
+          backgroundImage: 
+          'url("https://th.bing.com/th/id/R.04502c0947d84cfd6f79474aebb8464d?rik=ExtfKlWbHufsvg&riu=http%3a%2f%2frusselbock.co.uk%2fwp-content%2fuploads%2f2016%2f10%2fimg_1.jpg&ehk=O%2fKXrPa2hwGhIS8%2fTxurDJ%2f137MyB9C9pBPpqGs%2bKHg%3d&risl=&pid=ImgRaw&r=0")',          
           backgroundSize: "cover",
           height: "500px",
           backgroundPosition: "center",
@@ -108,7 +107,7 @@ function Workers() {
                         >
                           <Image
                             src={defaultworker}
-                            className="img-fluid "
+                            className="img-fluid"
                             alt=""
                           />
 

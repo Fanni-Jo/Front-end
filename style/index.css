@@ -620,6 +620,10 @@ progress {
   max-width: 100%;
   height: auto;
 }
+.services-images-home{
+  max-width: 80% ;
+  height: auto ;
+}
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -11458,11 +11462,15 @@ header.masthead .masthead-heading {
   display: block;
   margin: 0 auto;
 }
+.service-cont-rows{
+  width:26%;
+  align-self:center;
+}
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   background: rgba(255, 200, 0, 0.9);
   align-items: center;
   justify-content: center;
@@ -11840,9 +11848,8 @@ background-color: #bcd0c7; */
   line-height: 160px;
   margin-left: -10px;
   color: transparent;
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 1px #000;
   background: url("../pages/src/img/back.png");
-  -webkit-background-clip: text;
   background-position: 0 0;
   animation: back 20s linear infinite;
 
