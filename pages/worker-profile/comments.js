@@ -22,7 +22,7 @@ const Commit = ({ slug }) => {
         setserviceprovider(data);
       }
     });
-  },[]);
+  });
 
   useEffect(() => {
     reviewGetter();
@@ -43,7 +43,10 @@ const Commit = ({ slug }) => {
         },
         localStorage.getItem("jwt")
       )
-      .then(reviewGetter(), alert("Thank you for your review"));
+      .then(
+        reviewGetter(e),
+      //  alert("Thank you for your review")
+       );
   };
 
   // console.log("user", user);

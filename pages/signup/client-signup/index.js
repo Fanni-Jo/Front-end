@@ -52,7 +52,7 @@ export default function ClientSignup() {
 
                   },{headers:{'Authorization': `Bearer ${res.data.access}`}})
                   .then(
-                    alert("client signup success"),
+                    // alert("client signup success"),
                     // console.log("client signup success"),
                     router.push('/Login')
                   )
