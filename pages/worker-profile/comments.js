@@ -26,7 +26,7 @@ const Commit = ({ slug }) => {
 
   useEffect(() => {
     reviewGetter();
-  }, []);
+  });
   // console.log("serviceprovider", serviceprovider);
   const reviewCreator = async (e) => {
     e.preventDefault();
