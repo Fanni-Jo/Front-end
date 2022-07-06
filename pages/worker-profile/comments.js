@@ -22,7 +22,7 @@ const Commit = ({ slug }) => {
         setserviceprovider(data);
       }
     });
-  });
+  },[]);
 
   useEffect(() => {
     reviewGetter();
