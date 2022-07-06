@@ -33,53 +33,54 @@ const Profile = () => {
     GetData();
   }, []);
 
-  return serviceProviders.map((data) => {
+  return serviceProviders.map((data,id) => {
     if (data.username == slug) {
       return (
         <>
-          <div className="nav-div">
-            <div className="container-fluid  vh-50">
-              <nav className="navbar ">
-                <h2 className="navbar-username py-5 ">
+          <div className="nav-div" key={"nav"+id}>
+            <div className="container-fluid  vh-50"  key={"connav"+id}>
+              <nav className="navbar " key={"nav2"+id}>
+                <h2 className="navbar-username py-5 " key={"h2"+id}>
                   {" "}
                   FullName : {data.first_name + " " + data.last_name}{" "}
                 </h2>
               </nav>
             </div>
           </div>
-          <div className="img-contain">
-            <div className="container-fluid">
-              <div className="row worker-info">
-                <div className="col-xl-7 ">
-                  <div className="content">
-                    <div className="row worker-info">
-                      <div className="col-xl-9 img-wrapper">
+          <div className="img-contain" key={"img-c"+id}>
+            <div className="container-fluid" key={"img-cc"+id}>
+              <div className="row worker-info" key={"worker-inf"+id}>
+                <div className="col-xl-7 " key={"worker-info"+id}>
+                  <div className="content" key={"worker-in"+id}>
+                    <div className="row worker-info" key={"worker-infoo"+id}>
+                      <div className="col-xl-9 img-wrapper" key={"worker-infimg"+id}>
                         <Image
                           className="img-fluid img-profile"
                           width="400"
                           src={worker}
                           alt=""
+                          key={"worker-img"+id}
                         ></Image>
                       </div>
                     </div>
-                    <div className="">
-                      <div className="stars mb-2 ml-5">
-                        <div className="mt-5 d-flex  align-items-center">
-                          <h5 className="review-stat mr-2 ">Rating</h5>
-                          <div className="small-ratings mb-2">
-                            <i className="fa fa-star rating-color"></i>
-                            <i className="fa fa-star rating-color"></i>
-                            <i className="fa fa-star rating-color"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
+                    <div className="" key={"worker-rate"+id}>
+                      <div className="stars mb-2 ml-5" key={"worker-rates"+id}>
+                        <div className="mt-5 d-flex  align-items-center" key={"worker-ratz"+id}>
+                          <h5 className="review-stat mr-2 " key={"worker-hrating"+id}>Rating</h5>
+                          <div className="small-ratings mb-2" key={"worker-ratzs"+id}>
+                            <i className="fa fa-star rating-color" key={"w"+id}></i>
+                            <i className="fa fa-star rating-color" key={"w2"+id}></i>
+                            <i className="fa fa-star rating-color" key={"w3"+id}></i>
+                            <i className="fa fa-star" key={"w4"+id}></i>
+                            <i className="fa fa-star" key={"w5"+id}></i>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-5">
-                  <div className="info">
+                <div className="col-xl-5" key={"name"+id}>
+                  <div className="info" key={"fname"+id}>
                     <h5>{data.first_name + " " + data.last_name}</h5>
                     <hr></hr>
 

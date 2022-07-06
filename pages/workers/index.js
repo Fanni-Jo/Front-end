@@ -96,12 +96,15 @@ function Workers() {
               {iscategory > 0 ? (
                 category.map((worker, key) => {
                   return (
-                    <div className="col-lg-4 col-md-12 col-sm-12 mb-3" key={'Worker'+key}>
-                      <div className="card" key={'card'+key}>
+                    <div
+                      className="col-lg-4 col-md-12 col-sm-12 mb-3"
+                      key={"Worker" + key}
+                    >
+                      <div className="card" key={"card" + key}>
                         <div
                           className="bg-image hover-overlay ripple"
                           data-mdb-ripple-color="light"
-                          key={'bgcard'+key}
+                          key={"bgcard" + key}
                         >
                           <Image
                             src={defaultworker}
@@ -109,18 +112,18 @@ function Workers() {
                             alt=""
                           />
 
-                          <a href="#!" className="ripple" key={'abker'+key}>
+                          <a href="#!" className="ripple" key={"abker" + key}>
                             <div
                               className="mask"
                               style={{
                                 backgroundColor: "rgba(251, 251, 251, 0.15)",
                               }}
-                              key={'Workermask'+key}
+                              key={"Workermask" + key}
                             ></div>
                           </a>
                         </div>
 
-                        <div className="card-body" key={'cardbody'+key}>
+                        <div className="card-body" key={"cardbody" + key}>
                           <h5 className="card-title" key={"fullname" + key}>
                             Name: {worker.first_name + " " + worker.last_name}
                           </h5>
@@ -138,7 +141,7 @@ function Workers() {
                             href={`/worker-profile/${worker.username}`}
                             key={"username" + key}
                           >
-                            <a href="#!" className="btn btn-primary ">
+                            <a href="#!" className="btn btn-primary " key={"anke"+key}>
                               Profile
                             </a>
                           </Link>
@@ -148,7 +151,7 @@ function Workers() {
                   );
                 })
               ) : (
-                <h1 className="ms-center vh-10" key="login"> 
+                <h1 className="ms-center vh-10" key="login">
                   No Workers are available for this category
                 </h1>
               )}
