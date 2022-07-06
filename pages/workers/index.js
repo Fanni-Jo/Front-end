@@ -106,7 +106,7 @@ function Workers() {
      return (
       <div className="col-lg-4 col-md-12 col-sm-12 mb-3">
 
-      <div className="card">
+      <div className="card" >
   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
       <Image src={defaultworker} className="img-fluid " alt = ""/>
@@ -119,11 +119,11 @@ function Workers() {
   </div>
 
   <div className="card-body">
-      <h5 className="card-title" key={key}>Name: {worker.first_name + " " + worker.last_name}</h5>
-      <h6 className="card-title" key={key}>Address: {worker.address}</h6>
-      <h6 className="card-title" key={key}>Experience: {worker.years_of_exp} Years</h6>
-      <p className="card-text" key={key}>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.</p>
-      <Link href={`/worker-profile/${worker.username}`} key={key}>
+      <h5 className="card-title" key={'fullname' + key}>Name: {worker.first_name + " " + worker.last_name}</h5>
+      <h6 className="card-title" key={'address'+ key}>Address: {worker.address}</h6>
+      <h6 className="card-title" key={'experience'+key}>Experience: {worker.years_of_exp} Years</h6>
+      <p className="card-text" key={'parg'+key}>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.</p>
+      <Link href={`/worker-profile/${worker.username}`} key={'username'+key}>
       <a href="#!" className="btn btn-primary ">Profile</a>
       </Link>
   </div> 
