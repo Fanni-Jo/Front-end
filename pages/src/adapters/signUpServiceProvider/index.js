@@ -28,8 +28,8 @@ const signUpClient = async (event,data1,data2) => {
             })
             })
             
-            console.log(res);
-            console.log(res.data);
+            // console.log(res);
+            // console.log(res.data);
         }).catch(() => {
             toast.error("Please Make Sure All required Fields are filled out");
           })

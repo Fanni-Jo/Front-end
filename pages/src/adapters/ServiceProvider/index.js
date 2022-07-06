@@ -1,14 +1,14 @@
 import axios from "axios";
 // import toast, { Toaster } from "react-hot-toast";
 
-const ServiceProvider = async ((event) => {
+const ServiceProvider =  ((event) => {
     event.preventDefault();
-    await axios.get(
+     axios.get(
         `https://fanni-jo.herokuapp.com/api/service_provider/${event.target.username.value}`,
         config
         )
-    .then((res) => {
-        console.log(res.data);
-})
+//     .then((res) => {
+//         console.log(res.data);
+// })
 })
 export default ServiceProvider;

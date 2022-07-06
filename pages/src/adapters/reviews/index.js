@@ -7,9 +7,9 @@ export const reviewGetter = async (event) => {
         `https://fanni-jo.herokuapp.com/api/review/`,
         config
         )
-    .then((res) => {
-        console.log(res);
-})
+//     .then((res) => {
+//         console.log(res);
+// })
 }
 export const reviewPost = async (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ export const reviewPost = async (event) => {
         username: event.request.username.value,
     }
         )
-    .then((res) => {
-        console.log(res);
-})
+//     .then((res) => {
+//         console.log(res);
+// })
 }

@@ -14,7 +14,7 @@ function ContactUs() {
 
         await axios.post("https://fanni-jo.herokuapp.com/contact-us/", formData)
         .then(res => {
-            console.log('success', res)
+            // console.log('success', res)
 
 
 

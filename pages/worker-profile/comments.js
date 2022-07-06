@@ -27,7 +27,7 @@ const Commit = ({ slug }) => {
   useEffect(() => {
     reviewGetter();
   }, []);
-  console.log("serviceprovider", serviceprovider);
+  // console.log("serviceprovider", serviceprovider);
   const reviewCreator = async (e) => {
     e.preventDefault();
     await axios
@@ -46,7 +46,7 @@ const Commit = ({ slug }) => {
       .then(reviewGetter(), alert("Thank you for your review"));
   };
 
-  console.log("user", user);
+  // console.log("user", user);
   const reviewGetter = async () => {
     await axios
       .get("https://fanni-jo.herokuapp.com/api/review-provider/")

@@ -21,17 +21,17 @@ function Workers() {
       .then((res) => {
         setData(res.data);
         setServiceProviders(res.data);
-        console.log("data", res.data);
+        // console.log("data", res.data);
       })
       .catch((e) => {
-        console.log("data error", e);
+        // console.log("data error", e);
       });
   };
   useEffect(() => {
     GetData();
   }, []);
-  console.log("data", data);
-  console.log(iscategory)
+  // console.log("data", data);
+  // console.log(iscategory)
 
 
 
@@ -43,11 +43,11 @@ function Workers() {
     }
 
   })
-  console.log("category", category);
+  // console.log("category", category);
 
 
 
-  console.log("data", data);
+  // console.log("data", data);
 
   const Categories = {
 

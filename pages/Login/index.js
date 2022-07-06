@@ -24,13 +24,13 @@ function Login() {
 
         setToken(res.data.access)
         localStorage.setItem("jwt", res.data.access)
-        console.log("token", res.data.access)
+        // console.log("token", res.data.access)
         setlogin(true)
         router.push('/')
         setuser( e.target.username.value)
       })
       .catch(e => {
-        console.log("login error", e)
+        // console.log("login error", e)
         alert('Username or Password is incorrect')
 
       }).finally(() => {

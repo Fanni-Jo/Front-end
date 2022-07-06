@@ -16,18 +16,18 @@ const Profile = () => {
   const pic = 'https://media.discordapp.net/attachments/940214809448812574/994091278222499910/Raneem.jpg'
   const {query} = useRouter()
   const {slug} = query
-  console.log("slug",slug)
+  // console.log("slug",slug)
 
 const GetData = async () => {
   await axios
     .get("https://fanni-jo.herokuapp.com/api/signup/service-provider")
     .then((res) => {
       setData(res.data);
-      console.log("service data", res.data);
+      // console.log("service data", res.data);
     })
-    .catch((e) => {
-      console.log("service data error", e);
-    });
+    // .catch((e) => {
+    //   console.log("service data error", e);
+    // });
 };
 useEffect(() => {
   GetData();
@@ -97,7 +97,7 @@ useEffect(() => {
           <div className="whatsapp">
             <div className="row worker-info">
               
-          <button className="btn btn-primary btn-whatsapp" > <i class="fab fa-whatsapp mr-3" ></i>{data.phone}</button>
+          <button className="btn btn-primary btn-whatsapp" > <i className="fab fa-whatsapp mr-3" ></i>{data.phone}</button>
           
           </div>
           </div>
@@ -250,7 +250,7 @@ useEffect(() => {
                 </div>
              */}
 
-            <Comments/>
+            <Comments slug = {slug}/>
 </>
     );
   }

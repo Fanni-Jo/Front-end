@@ -12,7 +12,7 @@ export default function ClientSignup() {
   const [date, setDate] = useState();
 
 
-  console.log('date',date)
+  // console.log('date',date)
 
   const signUpClient = async (event) => {
     event.preventDefault();
@@ -53,15 +53,15 @@ export default function ClientSignup() {
                   },{headers:{'Authorization': `Bearer ${res.data.access}`}})
                   .then(
                     alert("client signup success"),
-                    console.log("client signup success"),
+                    // console.log("client signup success"),
                     router.push('/Login')
                   )
 
-                  .catch(console.log("client signup error"));
+                  .catch(alert("client signup error"));
               })
           })
-        console.log(res);
-        console.log(res.data);
+        // console.log(res);
+        // console.log(res.data);
       })
       .catch(() => {
         alert("Username or Password is already registerd");
