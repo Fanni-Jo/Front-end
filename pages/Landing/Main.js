@@ -15,7 +15,7 @@ function Main() {
                         <span className="fa-stack fa-4x">
                             {/* <i className="fas fa-circle fa-stack-2x text-primary"></i>
                             <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> */}
-                             <Image src={pic17} />
+                             <Image src={pic17} alt= "" />
                         </span>
                         <h4 className="my-5">fast</h4>
                         <p className="text-muted text-wrap">It does not matter where you live, we will be there! </p>
@@ -24,7 +24,7 @@ function Main() {
                         <span className="fa-stack fa-4x">
                             {/* <i className="fas fa-circle fa-stack-2x text-primary"></i>
                             <i className="fas fa-laptop fa-stack-1x fa-inverse"></i> */}
-                            <Image src={pic18} />
+                            <Image src={pic18} alt= ""/>
                         </span>
                         <h4 className="my-5">profiecient</h4>
                         <p className="text-muted">All service will be provide by profiecient technican with high experience</p>
@@ -33,7 +33,7 @@ function Main() {
                         <span className="fa-stack fa-4x">
                             {/* <i className="fas fa-circle fa-stack-2x text-primary"></i>
                             <i className="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                            <Image src={pic19} />
+                            <Image src={pic19} alt= ""/>
                            
                         </span>
                         <h4 className="my-5">Security</h4>
