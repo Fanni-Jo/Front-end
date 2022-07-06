@@ -55,9 +55,7 @@ function Login() {
     }
     
   }
-  // if (islogin) return (
-  //   <Landing/>
-  // )
+
 
   return (
     <>
@@ -75,13 +73,13 @@ function Login() {
               <p className="text-white-50 mb-5">Please enter your E-mail and Password!</p>
               <div className="form-outline form-white mb-4">
                 <input type="text" id="username" className="form-control form-control-lg" required/>
-                <label className="form-label" for="typeEmailX">username</label>
+                <label className="form-label" htmlFor="typeEmailX">username</label>
               </div>
 
 
                 <div className="form-outline form-white mb-4">
                   <input type={passwordType} id="password" className="form-control form-control-lg" required/>
-                  <label className="form-label" for="typeEmailX">Password</label>
+                  <label className="form-label" htmlFor="typeEmailX">Password</label>
                 </div>
 
 
@@ -97,7 +95,7 @@ function Login() {
 
 
             <div>
-            <p className="pb-lg-2 mt-2">Don't have an account? <Link  href="/signup"><a href="!#" className="text-white-50 fw-bold" > Sign Up</a></Link></p>
+            <p className="pb-lg-2 mt-2">Don&apos;t have an account? <Link  href="/signup"><a href="!#" className="text-white-50 fw-bold" > Sign Up</a></Link></p>
 
             </div>
             </form>
@@ -110,7 +108,6 @@ function Login() {
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> 
     
 </>
   )

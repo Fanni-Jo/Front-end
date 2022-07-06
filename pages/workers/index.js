@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { useStateContext } from "../context/categoryState"
 import Link from "next/link";
 import { useSpContext } from "../context/Serviceproviders"
+import Image from "next/image";
+import defaultworker from "../src/img/defaultworker.jpg"
 
-
-
-function workers() {
+function Workers() {
   const [data, setData] = useState([]);
   // const [userData, setUserData] = useState([]);
 
@@ -109,7 +109,7 @@ function workers() {
       <div className="card">
   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
-      <img src="https://th.bing.com/th/id/OIP.buWaB8mkjjv5EOR0IlheOAHaE8?pid=ImgDet&rs=1" class="img-fluid "/>
+      <Image src={defaultworker} className="img-fluid " alt = ""/>
   
       <a href="#!" className="ripple">
       <div className="mask"style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}}>
@@ -119,11 +119,11 @@ function workers() {
   </div>
 
   <div className="card-body">
-      <h5 className="card-title">Name: {worker.first_name + " " + worker.last_name}</h5>
-      <h6 className="card-title">Address: {worker.address}</h6>
-      <h6 className="card-title">Experience: {worker.years_of_exp} Years</h6>
-      <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <Link href={`/worker-profile/${worker.username}`}>
+      <h5 className="card-title" key={key}>Name: {worker.first_name + " " + worker.last_name}</h5>
+      <h6 className="card-title" key={key}>Address: {worker.address}</h6>
+      <h6 className="card-title" key={key}>Experience: {worker.years_of_exp} Years</h6>
+      <p className="card-text" key={key}>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.</p>
+      <Link href={`/worker-profile/${worker.username}`} key={key}>
       <a href="#!" className="btn btn-primary ">Profile</a>
       </Link>
   </div> 
@@ -144,53 +144,12 @@ function workers() {
   </div>
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-     
-
-
-
-
-    
-
-
-
-   
-
-
-
-
-      
-
 </>
 
   );
 }
 
-export default workers;
+export default Workers;
 
 
 

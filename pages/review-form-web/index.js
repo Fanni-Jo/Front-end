@@ -28,7 +28,7 @@ const ReviewFormWeb = () => {
     return ( 
         <>
        	{islogin ? 
-		<div class="container vh-100">
+		<div className="container vh-100">
 			<div className="col-md-6">
 				<div className="row">
 		<h1 className="mt-5">We appricate every feedback </h1>
@@ -38,7 +38,7 @@ const ReviewFormWeb = () => {
 			<div className="col-xs-12 col-sm-6">
 				<div className="form-group fl_icon">
 				
-				 <label for="rating" className="m-2">Rate us </label>
+				 <label htmlFor="rating" className="m-2">Rate us </label>
 					<select id="rating" name="rating">
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -65,8 +65,8 @@ const ReviewFormWeb = () => {
 	<>
 
 	
-	<div class="container vh-100">
-    <h1 class="mt-5">Login to continue </h1>
+	<div className="container vh-100">
+    <h1 className="mt-5">Login to continue </h1>
     <p className="lead"> <Link href="/Login"><a>Login</a></Link> to add your review</p>
   </div>
 

@@ -58,8 +58,8 @@ const Commit = ({ slug }) => {
   return (
     
     <>
-      <div class="container">
-        <div class="be-comment-block">
+      <div className="container">
+        <div className="be-comment-block">
           {reviews &&
             reviews.map((rev, id) => {
               if (
@@ -68,23 +68,23 @@ const Commit = ({ slug }) => {
               ) {
                 return (
                   <>
-                    <h1 class="comments-title">Review {id + 1}</h1>
-                    <div class="be-img-comment">
+                    <h1 className="comments-title">Review {id + 1}</h1>
+                    <div className="be-img-comment">
                       <a href="blog-detail-2.html">
-                        <Image src={pic13} alt="" class="be-ava-comment" />
+                        <Image src={pic13} alt="" className="be-ava-comment" />
                       </a>
                     </div>
-                    <div class="be-comment-content">
-                      <span class="be-comment-name">
+                    <div className="be-comment-content">
+                      <span className="be-comment-name">
                         <a href="blog-detail-2.html">{rev.username}</a>
                       </span>
 
-                      <span class="be-comment-time">
-                        <i class="fa fa-clock-o"></i>
+                      <span className="be-comment-time">
+                        <i className="fa fa-clock-o"></i>
                         {rev.created_date}
                       </span>
                       <h6 className="text-warning">{rev.rating} stars </h6>
-                      <p class="be-comment-text">{rev.review}</p>
+                      <p className="be-comment-text">{rev.review}</p>
                     </div>
                   </>
                 );
@@ -93,10 +93,10 @@ const Commit = ({ slug }) => {
         </div>
       </div>
       {islogin ? (
-        <form class="form-block container mb-5" onSubmit={reviewCreator}>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
-              <label for="rating" className="m-2">
+        <form className="form-block container mb-5" onSubmit={reviewCreator}>
+          <div className="row">
+            <div className="col-xs-12 col-sm-6">
+              <label htmlFor="rating" classNameName="m-2">
                 Rate
               </label>
               <select id="rating" name="rating">
@@ -107,10 +107,10 @@ const Commit = ({ slug }) => {
                 <option value="5">5</option>
               </select>
             </div>
-            <div class="col-xs-12">
-              <div class="form-group">
+            <div className="col-xs-12">
+              <div className="form-group">
                 <input
-                  class="form-input"
+                  className="form-input"
                   required
                   placeholder="write Your review here"
                   id="review"
@@ -119,7 +119,7 @@ const Commit = ({ slug }) => {
               </div>
             </div>
 			<div className="text-center ">
-            <button class="btn btn-primary pull-right col-sm-6 ">submit</button>
+            <button className="btn btn-primary pull-right col-sm-6 ">submit</button>
           </div>
           </div>
         </form>
@@ -133,8 +133,7 @@ const Commit = ({ slug }) => {
         </p>
       )}
     </>
-    //   </div>
-    // </div>
+
   );
 };
 

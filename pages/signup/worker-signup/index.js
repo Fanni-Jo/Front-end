@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 import {useRouter} from 'next/router'
 
-export default function serviceProviderSignup() {
+export default function ServiceProviderSignup() {
   const router =  useRouter();
   const [token,seToken] = useState()
 
@@ -106,43 +106,43 @@ export default function serviceProviderSignup() {
               <h3 className="text-center " >Registration Form</h3>
 
               <div className="mb-3 col-md-6 col-sm-12 col-lg-6">
-                  <label className="form-label text-light"  for="form6Example1">First name</label>
+                  <label className="form-label text-light"  htmlFor="form6Example1">First name</label>
                   <input type="text" id="first_name" className="form-control" placeholder="Jack" required/>
               </div>
 
               <div className="mb-3 col-md-6 col-sm-12 col-lg-6">
-                  <label className="form-label   text-light" for="form6Example2">Last name</label>
+                  <label className="form-label   text-light" htmlFor="form6Example2">Last name</label>
                   <input type="text" id="last_name" className="form-control" placeholder="Nir" required/>
               </div>
 
               <div className="col-md-12  col-sm-12  mb-3">
-                <label className="form-label  text-light" for="form6Example3">Username</label>
+                <label className="form-label  text-light" htmlFor="form6Example3">Username</label>
                 <input type="text" id="username" className="form-control" placeholder="JohnWick" required/>
               </div>
 
               <div className="col-md-12 col-sm-12  mb-3">
-                <label className="form-label  text-light" for="form6Example5">E-Mail Address</label>
+                <label className="form-label  text-light" htmlFor="form6Example5">E-Mail Address</label>
                 <input type="email" id="email" className="form-control" placeholder="john13@gmail.com" required/>
               </div>
 
               <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
-                <label className="form-label  text-light" for="form6Example3">Password</label>
+                <label className="form-label  text-light" htmlFor="form6Example3">Password</label>
                 <input type={passwordType} id="password" className="form-control " placeholder="Enter your password" required/>
               </div>
 
               <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
-                <label className="form-label  text-light text-fixed" for="form6Example3">Confirm Password</label>
+                <label className="form-label  text-light text-fixed" htmlFor="form6Example3">Confirm Password</label>
                 <input type={passwordType} id="re_password" className="form-control " placeholder="Re-enter your password" required/>
               </div>
 
               
               <div className="col-md-12 col-sm-12 col-lg-12 text-center">
-                <button className="btn btn-dark form-label text-fixed" onClick={togglePassword} for="form6Example3">Show Password</button>
+                <button className="btn btn-dark form-label text-fixed" onClick={togglePassword} htmlFor="form6Example3">Show Password</button>
                 
               </div>
 
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 mb-3  ">
-              <label className="form-label mr-3 text-light " for="form6Example6">Service Categories</label>
+              <label className="form-label mr-3 text-light " htmlFor="form6Example6">Service Categories</label>
                 <select id="services" name="services" className="p-2 dropdown " required>
                   <option className = "option" value={2}>Plumbing</option>
                   <option className = "option" value={5}>Carpinting</option>
@@ -154,30 +154,30 @@ export default function serviceProviderSignup() {
               </div>
 
               <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
-                <label className="form-label text-light" for="form6Example6">Years of Experience</label>
+                <label className="form-label text-light" htmlFor="form6Example6">Years of Experience</label>
                 <input type="number" min = "0" id="years_of_exp" className="form-control" placeholder="Example: 1" required/>
               </div>
 
 
               <div className="col-md-6 col-sm-12 col-lg-6 mb-3">
-                <label className="form-label text-light" for="form6Example3">Phone Number</label>
+                <label className="form-label text-light" htmlFor="form6Example3">Phone Number</label>
 
                 <input type="text" id="phone_number" className="form-control" placeholder="+962" defaultValue={'+962'} required/>
 
               </div>
               
               <div className="col-md-6 col-sm-12 col-lg-6 mb-3">
-                <label className="form-label text-light" for="form6Example4">City</label>
+                <label className="form-label text-light" htmlFor="form6Example4">City</label>
                 <input type="text" id="city" className="form-control " placeholder="Amman" required/>
               </div>
 
               <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
-                <label className="form-label text-light" for="form6Example7">Image</label>
+                <label className="form-label text-light" htmlFor="form6Example7">Image</label>
                 <input type="file" id="imageFile" name="files" accept="image/*" className="text-light"  multiple defaultValue={null} />
               <div id="display-image"></div>
               </div>
              <div className="col-xs-12 col-sm-12  col-md-12 col-lg-6 mb-3">
-                <label className="form-label text-light" for="form6Example7">Gender</label>
+                <label className="form-label text-light" htmlFor="form6Example7">Gender</label>
                 <select id="gender" name="gender" className="p-2 dropdown " required>
                   <option className = "option" value="MALE">Male</option>
                   <option className = "option" value="FEMALE">Female</option>

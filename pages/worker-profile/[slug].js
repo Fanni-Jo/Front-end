@@ -42,8 +42,8 @@ useEffect(() => {
 
 
 <>
-<div class="nav-div">
-  <div class="container-fluid  vh-50">
+<div className="nav-div">
+  <div className="container-fluid  vh-50">
       <nav className= "navbar ">
         <h2 className="navbar-username py-5 "> FullName : {data.first_name + ' ' + data.last_name}  </h2>
       </nav>
@@ -57,19 +57,19 @@ useEffect(() => {
 
             <div className="row worker-info">
               <div className="col-xl-9 img-wrapper">
-              <Image className="img-fluid img-profile" width="400" src={worker}></Image>
+              <Image className="img-fluid img-profile" width="400" src={worker} alt = ""></Image>
               </div>
             </div>
             <div className="">
               <div className="stars mb-2 ml-5">
-              <div class="mt-5 d-flex  align-items-center">
-            <h5 class="review-stat mr-2 ">Rating</h5>
-            <div class="small-ratings mb-2">
-                <i class="fa fa-star rating-color"></i>
-                <i class="fa fa-star rating-color"></i>
-                <i class="fa fa-star rating-color"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+              <div className="mt-5 d-flex  align-items-center">
+            <h5 className="review-stat mr-2 ">Rating</h5>
+            <div className="small-ratings mb-2">
+                <i className="fa fa-star rating-color"></i>
+                <i className="fa fa-star rating-color"></i>
+                <i className="fa fa-star rating-color"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
             </div>
             
         </div>

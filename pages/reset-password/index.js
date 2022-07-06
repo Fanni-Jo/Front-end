@@ -33,12 +33,12 @@ function ResetPassword() {
 
               <div className="form-outline form-white mb-4">
                 <input type={passwordType}  id="typePassword1" className="form-control form-control-lg"  name="password" required/>
-                <label className="form-label" for="typePassword1">Password</label>
+                <label className="form-label" htmlFor="typePassword1">Password</label>
               </div>
 
               <div className="form-outline form-white mb-4">
                 <input type={passwordType}  id="typePassword1" className="form-control form-control-lg"  name="password" required/>
-                <label className="form-label" for="typePassword1">Confirm Password</label>
+                <label className="form-label" htmlFor="typePassword1">Confirm Password</label>
         
 
               </div>

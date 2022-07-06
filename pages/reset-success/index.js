@@ -8,7 +8,7 @@ function Success() {
           <div className="card-body p-5 text-center mt-5">
 
               <h5 className="fw-bold mb-2 text-uppercase text-warning">Your Password has been successfully reset</h5>
-              <div><Image width="100" height="100" src={check}/></div>   
+              <div><Image width="100" height="100" src={check} alt=""/></div>   
                 <Link href="/Login"><button className="btn btn-outline-warning btn-lg px-5 login-btn mt-3 " type="submit">Go Back To Login Page</button></Link>
           </div>
   </div>  

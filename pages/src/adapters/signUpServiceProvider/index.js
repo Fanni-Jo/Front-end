@@ -10,7 +10,7 @@ const signUpClient = async (event,data1,data2) => {
           first_name:event.target.first_name.value,
           last_name:event.target.last_name.value,
           email:event.target.email.value,
-        }).then((res) => {
+        }).then(async(res) => {
             await axios.get(`https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`)
             .then((res) => {
                 axios.post("https://fanni-jo.herokuapp.com/api/signup/service_provider", {

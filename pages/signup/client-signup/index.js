@@ -104,7 +104,7 @@ export default function ClientSignup() {
                     <div className="mb-3 col-md-6 col-sm-12 col-lg-6">
                       <label
                         className="form-label text-light"
-                        for="form6Example1"
+                        htmlFor="form6Example1"
                       >
                         First name
                       </label>
@@ -121,7 +121,7 @@ export default function ClientSignup() {
                     <div className="mb-3 col-md-6 col-sm-12 col-lg-6">
                       <label
                         className="form-label   text-light"
-                        for="form6Example2"
+                        htmlFor="form6Example2"
                       >
                         Last name
                       </label>
@@ -137,7 +137,7 @@ export default function ClientSignup() {
                     <div className="col-md-12  col-sm-12  mb-3">
                       <label
                         className="form-label  text-light"
-                        for="form6Example3"
+                        htmlFor="form6Example3"
                       >
                         Username
                       </label>
@@ -153,7 +153,7 @@ export default function ClientSignup() {
                     <div className="col-md-12 col-sm-12  mb-3">
                       <label
                         className="form-label  text-light"
-                        for="form6Example5"
+                        htmlFor="form6Example5"
                       >
                         E-Mail Address
                       </label>
@@ -169,7 +169,7 @@ export default function ClientSignup() {
                     <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
                       <label
                         className="form-label  text-light"
-                        for="form6Example3"
+                        htmlFor="form6Example3"
                       >
                         Password
                       </label>
@@ -186,7 +186,7 @@ export default function ClientSignup() {
                     <div className="col-md-12 col-sm-12 col-lg-6 mb-3">
                       <label
                         className="form-label  text-light text-fixed"
-                        for="form6Example3"
+                        htmlFor="form6Example3"
                       >
                         Confirm Password
                       </label>
@@ -205,7 +205,7 @@ export default function ClientSignup() {
                       <button
                         className="btn btn-dark form-label text-fixed"
                         onClick={togglePassword}
-                        for="form6Example3"
+                        htmlFor="form6Example3"
                       >
                         Show Password
                       </button>
@@ -214,7 +214,7 @@ export default function ClientSignup() {
                     <div className="col-md-6 col-sm-12 col-lg-6 mb-3">
                       <label
                         className="form-label text-light"
-                        for="form6Example3"
+                        htmlFor="form6Example3"
                       >
                         Phone Number
                       </label>
@@ -232,7 +232,7 @@ export default function ClientSignup() {
                     <div className="col-md-6 col-sm-12 col-lg-6 mb-3">
                       <label
                         className="form-label text-light"
-                        for="form6Example4"
+                        htmlFor="form6Example4"
                       >
                         City
                       </label>
@@ -247,7 +247,7 @@ export default function ClientSignup() {
                     <div className="col-md-12 col-sm-12 col-lg-6  text-center">
                       <label
                         className="form-label text-light"
-                        for="form6Example7"
+                        htmlFor="form6Example7"
                         id="birthdate"
 
                       >
@@ -267,7 +267,7 @@ export default function ClientSignup() {
                     <div className="col-xs-12 col-sm-12  col-md-12 col-lg-6 mb-3">
                       <label
                         className="form-label text-light"
-                        for="form6Example7"
+                        htmlFor="form6Example7"
                         id="gender"
                       >
                         Gender
@@ -291,7 +291,7 @@ export default function ClientSignup() {
                   <div className="col-md-12 col-sm-12 col-lg-6 mb-3 profile-image  ">
                     <label
                       className="form-label text-light"
-                      for="form6Example7"
+                      htmlFor="form6Example7"
                       id="profile_picture"
                     >
                       Profile Image

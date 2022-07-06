@@ -30,7 +30,7 @@ function About() {
                             
                             <h4>Zaid Jarrar</h4>
                             <p className="text-muted">Junior Developer </p>
-                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Zaid-Jarrar" aria-label="Parveen Anand Facebook Profile"><i class="fa-brands fa-github"></i></a>
+                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Zaid-Jarrar" aria-label="Parveen Anand Facebook Profile"><i className="fa-brands fa-github"></i></a>
                             <a className="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/zaid-jarrar-4925b7190/" aria-label="Parveen Anand LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ function About() {
                         <Image className="mx-auto rounded-circle images" src={Raneem} alt="..." ></Image>
                             <h4>Raneem Oqaily</h4>
                             <p className="text-muted">Junior Developer</p>
-                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Raneemoqaily7" aria-label="Diana Petersen Facebook Profile"><i class="fa-brands fa-github"></i></a>
+                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Raneemoqaily7" aria-label="Diana Petersen Facebook Profile"><i className="fa-brands fa-github"></i></a>
                             <a className="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/raneem-oqaily-411b23202/" aria-label="Diana Petersen LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ function About() {
                             
                             <h4>Barham Farraj</h4>
                             <p className="text-muted">Junior Developer</p>
-                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Farraj007" aria-label="Larry Parker Facebook Profile"><i class="fa-brands fa-github"></i></a>
+                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Farraj007" aria-label="Larry Parker Facebook Profile"><i className="fa-brands fa-github"></i></a>
                             <a className="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/barham-farraj-258683147" aria-label="Larry Parker LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ function About() {
                             
                             <h4>Ahmad Jaara</h4>
                             <p className="text-muted">Junior Developer</p>
-                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/ahmadjaara" aria-label="Larry Parker Facebook Profile"><i class="fa-brands fa-github"></i></a>
+                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/ahmadjaara" aria-label="Larry Parker Facebook Profile"><i className="fa-brands fa-github"></i></a>
                             <a className="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/ahmadjaara/" aria-label="Larry Parker LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ function About() {
                             
                             <h4>Eman </h4>
                             <p className="text-muted">Junior Developer</p>
-                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Eman-Alshaikh" aria-label="Larry Parker Facebook Profile"><i class="fa-brands fa-github"></i></a>
+                            <a className="btn btn-dark btn-social mx-2" href="https://github.com/Eman-Alshaikh" aria-label="Larry Parker Facebook Profile"><i className="fa-brands fa-github"></i></a>
                             <a className="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/eman-al-shaikh-hussain-9a4583194/" aria-label="Larry Parker LinkedIn Profile"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>

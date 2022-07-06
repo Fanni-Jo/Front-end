@@ -14,7 +14,7 @@ function Forget() {
               <p className="text-white-50 mb-5 ">Please enter your email address</p>
               <div className="form-outline form-white mb-4">
                 <input type="email" id="typeEmailForget" className="form-control form-control-lg" placeholder="fanni@gmail.com" required/>
-                <label className="form-label" for="typeEmailForget" >E-Mail Address</label>
+                <label className="form-label" htmlFor="typeEmailForget" >E-Mail Address</label>
 
               </div>
 
