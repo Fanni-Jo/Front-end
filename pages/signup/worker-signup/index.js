@@ -42,7 +42,6 @@ export default function serviceProviderSignup() {
               )
               .then( async (id) => {
 
-                console.log("id", id.data);
                 await axios
                       .post("https://fanni-jo.herokuapp.com/api/signup/service-provider", {
                         first_name: event.target.first_name.value,
@@ -67,8 +66,8 @@ export default function serviceProviderSignup() {
 
 
           })
-        console.log(res);
-        console.log(res.data);
+        // console.log(res);
+        // console.log(res.data);
       })
       .catch(() => {
         toast.error("Username or Password is already registerd");
