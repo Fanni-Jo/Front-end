@@ -33,7 +33,6 @@ export default function serviceProviderSignup() {
           })
           .then(async (res) => {
 
-            // localStorage.setItem("jwt", res.data.access);
             seToken(res.data.access)
           
 
@@ -61,18 +60,7 @@ export default function serviceProviderSignup() {
                       },{headers:{'Authorization': `Bearer ${res.data.access}`}}).catch(
 
                         toast.error('Worker Signup Failed')
-                        // console.log("error",{
-                        //   phone: event.target.phone_number.value,
-                        //   profile_picture: null || event.target.profile_picture,
-                        //   phone2: "",
-                        //   years_of_exp:event.target.years_of_exp.value,
-                        //   address:event.target.city.value,
-                        //   media:null||event.target.imageFile,
-                        //   gender: event.target.gender.value,
-                        //   username: id.data.id,
-                        //   category: event.target.services.value,
-                        // }  
-                        // )
+
                       ).then(       
                          router.push('/Login')
                       )

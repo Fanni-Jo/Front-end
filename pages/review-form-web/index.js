@@ -66,8 +66,8 @@ const ReviewFormWeb = () => {
 
 	
 	<div class="container vh-100">
-    <h1 class="mt-5">welcom to fanni </h1>
-    <p className="lead"> <Link href="/Login"><a>Login</a></Link> to write your review</p>
+    <h1 class="mt-5">Login to continue </h1>
+    <p className="lead"> <Link href="/Login"><a>Login</a></Link> to add your review</p>
   </div>
 
 	</>)

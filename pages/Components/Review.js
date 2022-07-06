@@ -78,7 +78,7 @@ const Review = () => {
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-    <button className="btn btn-info mx-auto d-block btn-sm" onClick={()=>{router.push("/ReviewFormWeb")}}> add your review</button>
+    <button className="btn btn-info mx-auto d-block btn-sm" onClick={()=>{router.push("/review-form-web")}}> add your review</button>
         </>
      );
 }

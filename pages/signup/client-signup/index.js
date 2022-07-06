@@ -10,8 +10,7 @@ export default function ClientSignup() {
   const router = useRouter();
   const [islogin, setlogin] = useState(false);
   const [date, setDate] = useState();
-  // const [token,seToken] = useState()
-  // const config={headers:{'Authorization': `Bearer ${token}`}}
+
 
   console.log('date',date)
 
@@ -35,17 +34,13 @@ export default function ClientSignup() {
 
           .then(async (res) => {
 
-            // localStorage.setItem("jwt", res.data.access);
-            // seToken(res.data.access)
-            // setlogin(true);
+
 
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
               )
               .then( async (id) => {
-
-                // localStorage.setItem("id", id.data.id);
 
                 await axios
                   .post("https://fanni-jo.herokuapp.com/api/signup/client", {
@@ -57,6 +52,7 @@ export default function ClientSignup() {
 
                   },{headers:{'Authorization': `Bearer ${res.data.access}`}})
                   .then(
+                    alert("client signup success"),
                     console.log("client signup success"),
                     router.push('/Login')
                   )
@@ -66,9 +62,9 @@ export default function ClientSignup() {
           })
         console.log(res);
         console.log(res.data);
-      }).catch(console.log('username already exists'),alert('Username already exists'))
+      })
       .catch(() => {
-        toast.error("Username or Password is already registerd");
+        alert("Username or Password is already registerd");
       });
     event.target.reset();
   };

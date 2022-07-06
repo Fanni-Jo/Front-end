@@ -240,7 +240,7 @@
       }
 
       #background-forget{
-        height:87vh !important; 
+        height:100vh !important; 
 
       }
 
@@ -507,6 +507,152 @@ body{
   height: 150px;
 }
 
+/* workers list */
+.workers-container{
 
-/* images */
+  background:linear-gradient(135deg ,#f9f6c3e7 ,#c5c5c5) !important;
 
+}
+
+
+.btn-whatsapp{
+  width: 200px  !important;
+  
+}
+
+.navbar-username{
+
+  font-size: 1.5em !important;
+  font-weight: 1000 !important;
+  color: rgb(4, 3, 3) !important;
+  margin-top: 10px !important;
+  width: 1500px !important;
+  margin-bottom: -20px !important;
+  background:transparent !important;
+  /* border: 1px solid #7a8192!important; */
+
+}
+
+
+.nav-div{
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+.img-profile{
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  
+
+
+
+
+
+}
+.img-contain{
+  padding-top: 100px !important; 
+  background-color:#ebebeb ;
+
+}
+
+hr{
+  background-color:#7a7272
+
+}
+
+.img-wrapper  {
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+
+}
+
+.img-wrapper .img-profile{
+  transition: -4s ease;
+
+
+}
+
+.img-wrapper .img-profile:hover{
+  transform: translateY(10px);
+
+
+}
+
+.info{
+  padding-top: 110px;
+}
+
+.info h5{
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.info h1{
+  font-weight: 650;
+  letter-spacing: 4px;
+  margin-top: 10px;
+}
+
+.info h4{
+  color: #a8a8a8;
+  font-weight: 650;
+  letter-spacing: 4px;
+  margin-top: 20px;
+}
+.whatsapp .btn-whatsapp{
+  background-color: #25d366;
+  color: #fff;
+  border: 1px solid #25d366;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.btn-whatsapp{
+  width: 230px !important;
+}
+
+
+.card-star{
+  width:380px;
+  border:none;
+  height:280px;
+}
+
+.ratings{
+  margin-right:10px;
+}
+
+.ratings i{
+  
+  color:#cecece;
+  font-size:32px;
+}
+
+.rating-color{
+  color:#fbc634 !important;
+}
+
+.review-count{
+  font-weight:400;
+  margin-bottom:2px;
+  font-size:24px !important;
+}
+
+.small-ratings i{
+color:#cecece;   
+}
+
+.review-stat{
+  font-weight:600;
+  font-size:18px;
+  margin-bottom:2px;
+}

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+
 
 function ContactUs() {
     const contactUsHandler = async (e) => {
@@ -39,7 +39,7 @@ function ContactUs() {
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">Send us your feedback.</h3>
         </div>
 
         {/* <!-- to get an API token!--> */}

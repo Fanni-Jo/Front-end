@@ -4,13 +4,16 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import pic13 from "../src/img/portfolio/15.svg"
 import Comments from "./comments"
+import raneem from '../src/img/Raneem.jpg'
+import worker from '../src/img/worker.png'
+
 import {useSpContext} from "../context/Serviceproviders"
 
 
 const Profile = () => {
   const [data, setData] = useState([]);
   const [serviceProviders, setServiceProviders] = useSpContext();
-
+  const pic = 'https://media.discordapp.net/attachments/940214809448812574/994091278222499910/Raneem.jpg'
   const {query} = useRouter()
   const {slug} = query
   console.log("slug",slug)
@@ -35,12 +38,85 @@ useEffect(() => {
     return ( 
       serviceProviders.map((data) => {
         if (data.username == slug) {
-          // await axios.get()
           return (
 
 
 <>
-        <div className="container">
+<div class="nav-div">
+  <div class="container-fluid  vh-50">
+      <nav className= "navbar ">
+        <h2 className="navbar-username py-5 "> FullName : {data.first_name + ' ' + data.last_name}  </h2>
+      </nav>
+  </div>
+  </div>
+  <div className="img-contain">
+  <div className="container-fluid">
+    <div className="row worker-info">
+      <div className="col-xl-7 ">
+          <div className="content">
+
+            <div className="row worker-info">
+              <div className="col-xl-9 img-wrapper">
+              <Image className="img-fluid img-profile" width="400" src={worker}></Image>
+              </div>
+            </div>
+            <div className="">
+              <div className="stars mb-2 ml-5">
+              <div class="mt-5 d-flex  align-items-center">
+            <h5 class="review-stat mr-2 ">Rating</h5>
+            <div class="small-ratings mb-2">
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            
+        </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <div className="col-xl-5">
+        <div className="info">
+          <h5>{data.first_name + ' ' + data.last_name}</h5>
+          <hr></hr>
+
+          <h1>{data.address}</h1>
+          <hr></hr>
+
+          <h5>Email : {data.email}</h5>
+          <div className="sub-info">
+            <hr></hr>
+          <h5>Years of Experience : {data.years_of_exp}</h5>
+          <hr></hr>
+
+          <h4>Category</h4>
+          </div>
+          <div className="whatsapp">
+            <div className="row worker-info">
+              
+          <button className="btn btn-primary btn-whatsapp" > <i class="fab fa-whatsapp mr-3" ></i>{data.phone}</button>
+          
+          </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  </div>
+
+
+
+        {/* <div className="container">
     <div className="main-body my-2">    
           <div className="row gutters-sm">
             <div className="col-md-4 mb-3">
@@ -52,7 +128,6 @@ useEffect(() => {
                       <h4>{data.first_name + ' ' + data.last_name}</h4>
                       <p className="text-secondary mb-1">Full Stack Developer</p>
                       <p className="text-muted font-size-sm">{data.address}</p>
-                      {/* <button className="btn btn-primary me-1">Follow</button> */}
                       <button className="btn btn-primary me-1">Message</button>
                       <button className="btn btn-primary me-1">call me {data.phone}</button>
                     </div>
@@ -69,8 +144,7 @@ useEffect(() => {
                       <h6 className="mb-0">Full Name</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      {/* Kenneth Valdez */}
-                      {data.f}
+                      {data.first_name + ' ' + data.last_name}
                     </div>
                   </div>
                   
@@ -79,7 +153,6 @@ useEffect(() => {
                       <h6 className="mb-0">Email</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      {/* fip@jukmuh.al */}
                       {data.email}
                     </div>
                   </div>
@@ -89,7 +162,6 @@ useEffect(() => {
                       <h6 className="mb-0">Phone</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      {/* (239) 816-9029 */}
                       {data.phone}
                     </div>
                   </div>
@@ -107,19 +179,19 @@ useEffect(() => {
                     <div className="col-sm-3">
                       <h6 className="mb-0">job Category</h6>
                     </div>
-                    <div className="col-sm-9 text-secondary">
-                      {data.category}
+                    <div className="col-sm-9 text-secondary"> */}
+                      {/* {data.category} */}
                       {/* Pluming */}
-                    </div>
+                    {/* </div>
                   </div>
                   
                   <div className="row">
                     <div className="col-sm-3">
                       <h6 className="mb-0">Address</h6>
                     </div>
-                    <div className="col-sm-9 text-secondary">
+                    <div className="col-sm-9 text-secondary"> */}
                       {/* Bay Area, San Francisco, CA */}
-                      {data.address}
+                      {/* {data.address}
                     </div>
                   </div>
                 </div>
@@ -176,7 +248,7 @@ useEffect(() => {
           
                 </div>
                 </div>
-            
+             */}
 
             <Comments/>
 </>
