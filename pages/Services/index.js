@@ -8,7 +8,6 @@ import pic13 from "../src/img/portfolio/13.svg"
 import pic14 from "../src/img/portfolio/14.svg"
 import pic15 from "../src/img/portfolio/15.svg"
 import pic16 from "../src/img/portfolio/16.svg"
-
 import Link from "next/link"
 import Image from  'next/image'
 

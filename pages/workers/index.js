@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useStateContext } from "../context/categoryState"
+import { useStateContext } from "../context/categoryState";
 import Link from "next/link";
-import { useSpContext } from "../context/Serviceproviders"
+import { useSpContext } from "../context/Serviceproviders";
 import Image from "next/image";
-import defaultworker from "../src/img/defaultworker.jpg"
+import defaultworker from "../src/img/defaultworker.jpg";
 
 function Workers() {
   const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ function Workers() {
   const [iscategory, setCategory] = useStateContext();
 
   const [serviceProviders, setServiceProviders] = useSpContext();
-  const pic = 'https://mdbcdn.b-cdn.net/img/new/slides/041.webp'
+  const pic = "https://mdbcdn.b-cdn.net/img/new/slides/041.webp";
 
   const GetData = async () => {
     await axios
@@ -33,127 +33,137 @@ function Workers() {
   // console.log("data", data);
   // console.log(iscategory)
 
-
-
-  const category = []
+  const category = [];
   data.map((item) => {
     if (item.category == iscategory) {
-      category.push(item)
-
+      category.push(item);
     }
-
-  })
+  });
   // console.log("category", category);
-
-
 
   // console.log("data", data);
 
   const Categories = {
-
-    "2": "Plumbers",
-    "5": "Carpenters",
-    "6": "Cleaners",
-    "7": "Welders",
-    "8": "Farmers",
-    "9": "Construction Workers",
-
-  }
-
-
+    2: "Plumbers",
+    5: "Carpenters",
+    6: "Cleaners",
+    7: "Welders",
+    8: "Farmers",
+    9: "Construction Workers",
+  };
 
   return (
-
     <>
-
-    
-<div
-    className="text-center bg-image container-fluid "
-    style={{
-    backgroundImage: 'url("https://th.bing.com/th/id/R.04502c0947d84cfd6f79474aebb8464d?rik=ExtfKlWbHufsvg&riu=http%3a%2f%2frusselbock.co.uk%2fwp-content%2fuploads%2f2016%2f10%2fimg_1.jpg&ehk=O%2fKXrPa2hwGhIS8%2fTxurDJ%2f137MyB9C9pBPpqGs%2bKHg%3d&risl=&pid=ImgRaw&r=0")',
-    backgroundSize: "cover",height:'500px', backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
-
-  >
-    <div className="mask pt-2">
-      <div className="d-flex justify-content-center align-items-center h-100 mt-5 " style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
-        <div className="text-white btn-lg mb-3">
-          <h2 className="">{Categories[iscategory]}</h2>
-          {/* <h4 className="mb-3">Subheading</h4> */}
-          {/* <a className="btn btn-outline-light btn-lg" href="#!" role="button"
+      <div
+        className="text-center bg-image container-fluid "
+        style={{
+          backgroundImage:
+            'url("https://th.bing.com/th/id/R.04502c0947d84cfd6f79474aebb8464d?rik=ExtfKlWbHufsvg&riu=http%3a%2f%2frusselbock.co.uk%2fwp-content%2fuploads%2f2016%2f10%2fimg_1.jpg&ehk=O%2fKXrPa2hwGhIS8%2fTxurDJ%2f137MyB9C9pBPpqGs%2bKHg%3d&risl=&pid=ImgRaw&r=0")',
+          backgroundSize: "cover",
+          height: "500px",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="mask pt-2">
+          <div
+            className="d-flex justify-content-center align-items-center h-100 mt-5 "
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+          >
+            <div className="text-white btn-lg mb-3">
+              <h2 className="">{Categories[iscategory]}</h2>
+              {/* <h4 className="mb-3">Subheading</h4> */}
+              {/* <a className="btn btn-outline-light btn-lg" href="#!" role="button"
           >Call to action</a
           > */}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  {/* Search bar */}
-  <div className="workers-container">
-  <div className="container cards-worker mt-2">
+      {/* Search bar */}
+      <div className="workers-container">
+        <div className="container cards-worker mt-2">
+          {/* Cards */}
+          <div
+            style={{
+              backgroundImage: 'url("")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="row">
+              {iscategory > 0 ? (
+                category.map((worker, key) => {
+                  return (
+                    <div className="col-lg-4 col-md-12 col-sm-12 mb-3" key={'Worker'+key}>
+                      <div className="card" key={'card'+key}>
+                        <div
+                          className="bg-image hover-overlay ripple"
+                          data-mdb-ripple-color="light"
+                          key={'bgcard'+key}
+                        >
+                          <Image
+                            src={defaultworker}
+                            className="img-fluid "
+                            alt=""
+                          />
 
+                          <a href="#!" className="ripple" key={'abker'+key}>
+                            <div
+                              className="mask"
+                              style={{
+                                backgroundColor: "rgba(251, 251, 251, 0.15)",
+                              }}
+                              key={'Workermask'+key}
+                            ></div>
+                          </a>
+                        </div>
 
-
-
-
- {/* Cards */}
-  <div style={{
-      backgroundImage: 'url("")',
-      backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}>
-
-    <div className="row">
-       
-
-    {iscategory > 0 ? category.map((worker, key) => { 
-     return (
-      <div className="col-lg-4 col-md-12 col-sm-12 mb-3">
-
-      <div className="card" >
-  <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-
-      <Image src={defaultworker} className="img-fluid " alt = ""/>
-  
-      <a href="#!" className="ripple">
-      <div className="mask"style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}}>
-
+                        <div className="card-body" key={'cardbody'+key}>
+                          <h5 className="card-title" key={"fullname" + key}>
+                            Name: {worker.first_name + " " + worker.last_name}
+                          </h5>
+                          <h6 className="card-title" key={"address" + key}>
+                            Address: {worker.address}
+                          </h6>
+                          <h6 className="card-title" key={"experience" + key}>
+                            Experience: {worker.years_of_exp} Years
+                          </h6>
+                          <p className="card-text" key={"parg" + key}>
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card&apos;s content.
+                          </p>
+                          <Link
+                            href={`/worker-profile/${worker.username}`}
+                            key={"username" + key}
+                          >
+                            <a href="#!" className="btn btn-primary ">
+                              Profile
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <h1 className="ms-center vh-10" key="login"> 
+                  No Workers are available for this category
+                </h1>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-      </a>
-  </div>
-
-  <div className="card-body">
-      <h5 className="card-title" key={'fullname' + key}>Name: {worker.first_name + " " + worker.last_name}</h5>
-      <h6 className="card-title" key={'address'+ key}>Address: {worker.address}</h6>
-      <h6 className="card-title" key={'experience'+key}>Experience: {worker.years_of_exp} Years</h6>
-      <p className="card-text" key={'parg'+key}>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.</p>
-      <Link href={`/worker-profile/${worker.username}`} key={'username'+key}>
-      <a href="#!" className="btn btn-primary ">Profile</a>
-      </Link>
-  </div> 
-    </div>
-      </div>
-
-) 
- }): <h1 className="ms-center vh-10">No Workers are available for this category</h1>}
-    
- 
-    </div>
-    
-
-
-  </div>
-
-  </div>
-  </div>
-
-
-</>
-
+    </>
   );
 }
 
 export default Workers;
 
-
-
-{/* <section className="wrapper">
+{
+  /* <section className="wrapper">
 
 
         <div className="container-fostrap">
@@ -231,4 +241,5 @@ export default Workers;
         </div>
 
 
-      </section> */}
+      </section> */
+}
