@@ -45,7 +45,7 @@ useEffect(() => {
 <div class="nav-div">
   <div class="container-fluid  vh-50">
       <nav className= "navbar ">
-        <h2 className="navbar-username py-5 "> Username : Zaid Jarrar  </h2>
+        <h2 className="navbar-username py-5 "> FullName : {data.first_name + ' ' + data.last_name}  </h2>
       </nav>
   </div>
   </div>
@@ -89,7 +89,7 @@ useEffect(() => {
           <h5>Email : {data.email}</h5>
           <div className="sub-info">
             <hr></hr>
-          <h5>Experience : {data.years_of_exp}</h5>
+          <h5>Years of Experience : {data.years_of_exp}</h5>
           <hr></hr>
 
           <h4>Category</h4>

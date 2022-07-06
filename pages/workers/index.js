@@ -100,8 +100,10 @@ function workers() {
       backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}>
 
     <div className="row">
-    {category.map((worker, key) => { 
-    { return (
+       
+
+    {iscategory > 0 ? category.map((worker, key) => { 
+     return (
       <div className="col-lg-4 col-md-12 col-sm-12 mb-3">
 
       <div className="card">
@@ -129,10 +131,11 @@ function workers() {
       </div>
 
 ) 
- }}
-    )}
-
+ }): <h1 className="ms-center vh-10">No Workers are available for this category</h1>}
+    
+ 
     </div>
+    
 
 
   </div>

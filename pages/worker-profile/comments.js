@@ -24,6 +24,10 @@ const Commit = ({ slug }) => {
     });
   }, []);
 
+  useEffect(() => {
+    reviewGetter();
+  }, []);
+  console.log("serviceprovider", serviceprovider);
   const reviewCreator = async (e) => {
     e.preventDefault();
     await axios
@@ -41,9 +45,7 @@ const Commit = ({ slug }) => {
       )
       .then(reviewGetter(), alert("Thank you for your review"));
   };
-  useEffect(() => {
-    reviewGetter();
-  }, []);
+
   console.log("user", user);
   const reviewGetter = async () => {
     await axios

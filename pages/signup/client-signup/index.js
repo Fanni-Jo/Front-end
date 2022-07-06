@@ -52,6 +52,7 @@ export default function ClientSignup() {
 
                   },{headers:{'Authorization': `Bearer ${res.data.access}`}})
                   .then(
+                    alert("client signup success"),
                     console.log("client signup success"),
                     router.push('/Login')
                   )
@@ -61,9 +62,9 @@ export default function ClientSignup() {
           })
         console.log(res);
         console.log(res.data);
-      }).catch(console.log('username already exists'),alert('Username already exists'))
+      })
       .catch(() => {
-        toast.error("Username or Password is already registerd");
+        alert("Username or Password is already registerd");
       });
     event.target.reset();
   };
