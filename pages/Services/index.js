@@ -8,7 +8,6 @@ import pic13 from "../src/img/portfolio/13.svg"
 import pic14 from "../src/img/portfolio/14.svg"
 import pic15 from "../src/img/portfolio/15.svg"
 import pic16 from "../src/img/portfolio/16.svg"
-
 import Link from "next/link"
 import Image from  'next/image'
 
@@ -19,18 +18,18 @@ const [iscategory, setCategory] = useStateContext();
   return (
     <> 
     
-<section className="page-section bg-light" id="services">
+<section className="page-section bg-light" id="services" key="section">
            
-            <div className="container">
-                <div className="text-center" >
+            <div className="container" key="cont">
+                <div className="text-center" key="text-con">
                     <h2 className="section-heading text-uppercase">Services</h2>
                     <h3 className="section-subheading text-muted">provided by pro technican</h3>
                 </div>
-                <div className="row">
+                <div className="row" key='item1'>
                     <div className="col-lg-4 col-sm-6 mb-4">
                         {/* <!--  item 1--> */}
-                        <div className="portfolio-item">
-                        <Link href="/workers" >
+                        <div className="portfolio-item" key = "iteml">
+                        <Link href="/workers" key="workerlin">
 
                             <a className="portfolio-link" data-bs-toggle="1" href="#">
                                 <div className="portfolio-hover">

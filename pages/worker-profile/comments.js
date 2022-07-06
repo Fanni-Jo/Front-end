@@ -58,8 +58,8 @@ const Commit = ({ slug }) => {
   return (
     
     <>
-      <div className="container">
-        <div className="be-comment-block">
+      <div className="container" key="whole">
+        <div className="be-comment-block" key="in">
           {reviews &&
             reviews.map((rev, id) => {
               if (
@@ -68,23 +68,23 @@ const Commit = ({ slug }) => {
               ) {
                 return (
                   <>
-                    <h1 className="comments-title">Review {id + 1}</h1>
-                    <div className="be-img-comment">
+                    <h1 className="comments-title" key={"rev"+id}>Review {id + 1}</h1>
+                    <div className="be-img-comment" key={"imgdiv"+id}>
                       <a href="blog-detail-2.html">
-                        <Image src={pic13} alt="" className="be-ava-comment" />
+                        <Image src={pic13} alt="" className="be-ava-comment" key={"img"+id}/>
                       </a>
                     </div>
-                    <div className="be-comment-content">
-                      <span className="be-comment-name">
-                        <a href="blog-detail-2.html">{rev.username}</a>
+                    <div className="be-comment-content" key={"username"+id}>
+                      <span className="be-comment-name" key={"usernamespan"+id}>
+                        <a href="blog-detail-2.html" key={"user"+id}>{rev.username}</a>
                       </span>
 
-                      <span className="be-comment-time">
-                        <i className="fa fa-clock-o"></i>
+                      <span className="be-comment-time" key={"timediv"+id}>
+                        <i className="fa fa-clock-o" key={"time"+id}></i>
                         {rev.created_date}
                       </span>
-                      <h6 className="text-warning">{rev.rating} stars </h6>
-                      <p className="be-comment-text">{rev.review}</p>
+                      <h6 className="text-warning" key={"stars"+id}>{rev.rating} stars </h6>
+                      <p className="be-comment-text" key={"timediv"+id}>{rev.review}</p>
                     </div>
                   </>
                 );
