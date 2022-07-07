@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const Context = createContext();
 
 
-export function StateProvider({ children }) {
+export  function StateProvider({ children }) {
   // const [theme, setTheme] = useState("light");
   const [iscategory, setCategory] = useState();
 
@@ -13,6 +13,6 @@ export function StateProvider({ children }) {
   );
 }
 
-export function useStateContext() {
+export  function useStateContext() {
   return useContext(Context);
 }
