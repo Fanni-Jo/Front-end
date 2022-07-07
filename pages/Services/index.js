@@ -15,6 +15,7 @@ import { useStateContext } from "../context/categoryState"
 
 function Services() {
 const [iscategory, setCategory] = useStateContext();
+
   return (
     <> 
     
@@ -26,109 +27,109 @@ const [iscategory, setCategory] = useStateContext();
                     <h3 className="section-subheading text-muted">provided by pro technican</h3>
                 </div>
                 <div className="row" key='item1'>
-                    <div className="col-lg-4 col-sm-6 mb-4">
+                    <div className="col-lg-4 col-sm-6 mb-4" key="col1">
                         {/* <!--  item 1--> */}
                         <div className="portfolio-item" key = "iteml">
                         <Link href="/workers" key="workerlin">
 
-                            <a className="portfolio-link" data-bs-toggle="1" href="#">
-                                <div className="portfolio-hover">
+                            <a className="portfolio-link" data-bs-toggle="1" href="#" key='anke1'>
+                                <div className="portfolio-hover" div='hov1'>
                                 </div>
-                                <Image className="img-fluid services-images-home" src={pic10} alt="..." onClick={()=>{setCategory(5)}}/>
+                                <Image className="img-fluid services-images-home" src={pic10} alt="..." onClick={()=>{setCategory(5)}} key='imgg1'/>
                             </a>
                         </Link>
-                            <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">carpenter service</div>
-                                <div className="portfolio-caption-subheading text-muted">lets fix</div>
+                            <div className="portfolio-caption" key='portfolio-caption'>
+                                <div className="portfolio-caption-heading" key='portfolio-captionheading'>carpenter service</div>
+                                <div className="portfolio-caption-subheading text-muted" key='portfolio-caption muted'>lets fix</div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-sm-6 mb-4">
+                    <div className="col-lg-4 col-sm-6 mb-4" key='col2'>
                         
                         {/* <!--  item 2--> */}
-                        <div className="portfolio-item">
-                        <Link href="/workers" >
+                        <div className="portfolio-item" key='itrem2'>
+                        <Link href="/workers" key='linkw2' >
                             
-                            <a className="portfolio-link" data-bs-toggle="" href="#">
-                                <div className="portfolio-hover">
+                            <a className="portfolio-link" data-bs-toggle="" href="#" key='ansj12'>
+                                <div className="portfolio-hover" key='hover2'>
                                 </div>
-                                <Image className="img-fluid services-images-home" src={pic11} alt="..."  onClick={()=>{setCategory(9)}} />
+                                <Image className="img-fluid services-images-home" src={pic11} key ='imgg2'alt="..."  onClick={()=>{setCategory(9)}} />
                             </a>
                             </Link>
                             
-                            <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">painting and building service</div>
-                                <div className="portfolio-caption-subheading text-muted">lets fix</div>
+                            <div className="portfolio-caption" key='caption2'>
+                                <div className="portfolio-caption-heading" key='headings2'>painting and building service</div>
+                                <div className="portfolio-caption-subheading text-muted" key='sacdc'>lets fix</div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-sm-6 mb-4">
+                    <div className="col-lg-4 col-sm-6 mb-4" key='cl3'>
                         {/* <!--  item 3--> */}
-                        <div className="portfolio-item">
-                            <Link href="/workers" >
-                            <a className="portfolio-link" data-bs-toggle="">
-                                <div className="portfolio-hover">
+                        <div className="portfolio-item" key='irtem3'>
+                            <Link href="/workers" key='links123'>
+                            <a className="portfolio-link" data-bs-toggle="" key='link31'>
+                                <div className="portfolio-hover" key='hover3'>
                                 </div>
-                                <Image className="img-fluid services-images-home" src={pic12}  alt="..." onClick={()=>{setCategory(8)}}/>
+                                <Image className="img-fluid services-images-home" key='imgg3'src={pic12}  alt="..." onClick={()=>{setCategory(8)}}/>
                             </a>
                             </Link>
                             
                             
 
-                            <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">agricltural service</div>
-                                <div className="portfolio-caption-subheading text-muted">lets plant</div>
+                            <div className="portfolio-caption" key='caption3'>
+                                <div className="portfolio-caption-heading" key='caption-haeding3'>agricltural service</div>
+                                <div className="portfolio-caption-subheading text-muted" key='subheading3'>lets plant</div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0" key='col4'>
                         {/* <!--  item 4--> */}
-                        <div className="portfolio-item">
-                            <Link href="/workers" >
-                            <a className="portfolio-link" data-bs-toggle="" href="#">
-                                <div className="portfolio-hover">
+                        <div className="portfolio-item" key='item41'>
+                            <Link href="/workers" key='linke4' >
+                            <a className="portfolio-link " key='mklamsd2'  data-bs-toggle="" href="#">
+                                <div className="portfolio-hover" key='hoverwe4'>
                                 </div>
-                                <Image className="img-fluid services-images-home" src={pic13} alt="..." onClick={()=>{setCategory(6)}} />
+                                <Image className="img-fluid services-images-home" key='imgg4' src={pic13} alt="..." onClick={()=>{setCategory(6)}} />
                             </a>
                             </Link>
-                            <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">cleaned service</div>
-                                <div className="portfolio-caption-subheading text-muted">lets clean</div>
+                            <div className="portfolio-caption" key='caption4'>
+                                <div className="portfolio-caption-heading" key='caheading4'>cleaned service</div>
+                                <div className="portfolio-caption-subheading text-muted" key='subheading45'>lets clean</div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0" key='cols5'>
                         {/* <!--  item 5--> */}
-                        <div className="portfolio-item">
-                            <Link href="/workers"  >
-                            <a className="portfolio-link" data-bs-toggle="" href="#">
-                                <div className="portfolio-hover">
+                        <div className="portfolio-item" key='item5s'>
+                            <Link href="/workers"  key='linke5'>
+                            <a className="portfolio-link" key='ans5'data-bs-toggle="" href="#">
+                                <div className="portfolio-hover" key='hover5'>
                                 </div>
-                                <Image className="img-fluid services-images-home" src={pic16} alt="..." onClick={()=>{setCategory(7)}}/>
+                                <Image className="img-fluid services-images-home" key='imgg5'src={pic16} alt="..." onClick={()=>{setCategory(7)}}/>
                             </a>
                             </Link>
-                            <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">welding service</div>
-                                <div className="portfolio-caption-subheading text-muted">lets weld</div>
+                            <div className="portfolio-caption" key='cap5sa'>
+                                <div className="portfolio-caption-heading" key='capheading5'>welding service</div>
+                                <div className="portfolio-caption-subheading text-muted" key='subcab5'>lets weld</div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-sm-6">
+                    <div className="col-lg-4 col-sm-6" key='cols6'>
                         {/* <!-- item 6--> */}
-                        <div className="portfolio-item">
-                            <Link href="/workers"  >
+                        <div className="portfolio-item" key='asd6'>
+                            <Link href="/workers"  key='link6'>
 
 
-                            <a className="portfolio-link" data-bs-toggle="" href="#" >
+                            <a className="portfolio-link" key='linke6'data-bs-toggle="" href="#" >
                   
                                 
-                                <Image className="img-fluid services-images-home" src={pic15} alt="..." onClick={()=>{setCategory(2)}} />
+                                <Image className="img-fluid services-images-home" key='imgg6s'src={pic15} alt="..." onClick={()=>{setCategory(2)}} />
                             </a>
                             </Link>
 
-                            <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">plumbing service</div>
-                                <div className="portfolio-caption-subheading text-muted">lets fix</div>
+                            <div className="portfolio-caption" key='asdx6'>
+                                <div className="portfolio-caption-heading" key='head6'>plumbing service</div>
+                                <div className="portfolio-caption-subheading text-muted "key='sdjom56'>lets fix</div>
                             </div>
                         </div>
                     </div>

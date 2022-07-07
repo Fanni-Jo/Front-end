@@ -44,7 +44,7 @@ const Commit = ({ slug }) => {
         localStorage.getItem("jwt")
       )
       .then(
-        reviewGetter(e),
+        reviewGetter(),
       //  alert("Thank you for your review")
        );
   };
@@ -73,8 +73,8 @@ const Commit = ({ slug }) => {
                   <>
                     <h1 className="comments-title" key={"rev"+id}>Review {id + 1}</h1>
                     <div className="be-img-comment" key={"imgdiv"+id}>
-                      <a href="blog-detail-2.html">
-                        <Image src={pic13} alt="" className="be-ava-comment" key={"img"+id}/>
+                      <a href="blog-detail-2.html" key={"ankera"+id}>
+                        <Image src={rev.profile_picture||pic13} width='60' height='60' alt="" className="be-ava-comment" key={"img"+rev.username}/>
                       </a>
                     </div>
                     <div className="be-comment-content" key={"username"+id}>
@@ -87,7 +87,7 @@ const Commit = ({ slug }) => {
                         {rev.created_date}
                       </span>
                       <h6 className="text-warning" key={"stars"+id}>{rev.rating} stars </h6>
-                      <p className="be-comment-text" key={"timediv"+id}>{rev.review}</p>
+                      <p className="be-comment-text" key={"timedive"+id}>{rev.review}</p>
                     </div>
                   </>
                 );

@@ -2,9 +2,9 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import pic13 from "../src/img/portfolio/15.svg";
+// import pic13 from "../src/img/portfolio/15.svg";
 import Comments from "./comments";
-import raneem from "../src/img/Raneem.jpg";
+// import raneem from "../src/img/Raneem.jpg";
 import worker from "../src/img/worker.png";
 
 import { useSpContext } from "../context/Serviceproviders";
@@ -12,8 +12,8 @@ import { useSpContext } from "../context/Serviceproviders";
 const Profile = () => {
   const [data, setData] = useState([]);
   const [serviceProviders, setServiceProviders] = useSpContext();
-  const pic =
-    "https://media.discordapp.net/attachments/940214809448812574/994091278222499910/Raneem.jpg";
+  // const pic =
+  //   "https://media.discordapp.net/attachments/940214809448812574/994091278222499910/Raneem.jpg";
   const { query } = useRouter();
   const { slug } = query;
   // console.log("slug",slug)
@@ -56,8 +56,10 @@ const Profile = () => {
                       <div className="col-xl-9 img-wrapper" key={"worker-infimg"+id}>
                         <Image
                           className="img-fluid img-profile"
+                          // layout="responsive"
                           width="400"
-                          src={worker}
+                          height='200'
+                          src={data.profile_picture||worker}
                           alt=""
                           key={"worker-img"+id}
                         ></Image>
@@ -81,25 +83,25 @@ const Profile = () => {
                 </div>
                 <div className="col-xl-5" key={"name"+id}>
                   <div className="info" key={"fname"+id}>
-                    <h5>{data.first_name + " " + data.last_name}</h5>
-                    <hr></hr>
+                    <h5 key={"fhname"+id}>{data.first_name + " " + data.last_name}</h5>
+                    <hr key={"hr1"+id}></hr>
 
-                    <h1>{data.address}</h1>
-                    <hr></hr>
+                    <h1 key={"address"+id}>{data.address}</h1>
+                    <hr key={"hr2"+id}></hr>
 
-                    <h5>Email : {data.email}</h5>
-                    <div className="sub-info">
-                      <hr></hr>
-                      <h5>Years of Experience : {data.years_of_exp}</h5>
-                      <hr></hr>
+                    <h5 key={"emails"+id}>Email : {data.email}</h5>
+                    <div className="sub-info" key={"fivhr3"+id}>
+                      <hr key={"hr3"+id}></hr>
+                      <h5 key={"exp"+id}>Years of Experience : {data.years_of_exp}</h5>
+                      <hr key={"hr3s"+id}></hr>
 
-                      <h4>Category</h4>
+                      <h4 key={"categ"+id}>Category</h4>
                     </div>
-                    <div className="whatsapp">
-                      <div className="row worker-info">
-                        <button className="btn btn-primary btn-whatsapp">
+                    <div className="whatsapp" key={"wp"+id}>
+                      <div className="row worker-info" key={"workerinfo"+id}>
+                        <button className="btn btn-primary btn-whatsapp" key={"wpbutton"+id}>
                           {" "}
-                          <i className="fab fa-whatsapp mr-3"></i>
+                          <i  key={"workeri"+id} className="fab fa-whatsapp mr-3"></i>
                           {data.phone}
                         </button>
                       </div>
@@ -109,11 +111,13 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <Comments slug={slug} />
+          <Comments slug={slug} key={"comments"+id} />
         </>
       );
     }
-  });
+  }
+  
+  );
 };
 
 export default Profile;
