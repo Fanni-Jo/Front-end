@@ -2,5 +2,12 @@
 const nextConfig = {
     reactStrictMode: true,
   }
-  
-  module.exports = nextConfig
+const withImages = require('next-images')
+
+  module.exports = {
+    images: {
+      domains: ['fanni-jo.herokuapp.com'],
+    },
+    withImages(){},
+    nextConfig
+  }

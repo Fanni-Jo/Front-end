@@ -10,7 +10,6 @@ function Workers() {
   // const [userData, setUserData] = useState([]);
 
   const [iscategory, setCategory] = useStateContext();
-
   const [serviceProviders, setServiceProviders] = useSpContext();
   const pic = "https://mdbcdn.b-cdn.net/img/new/slides/041.webp";
 
@@ -22,9 +21,9 @@ function Workers() {
         setServiceProviders(res.data);
         // console.log("data", res.data);
       })
-      .catch((e) => {
-        // console.log("data error", e);
-      });
+      // .catch((e) => {
+      //   console.log("data error", e);
+      // });
   };
   useEffect(() => {
     GetData();
@@ -32,7 +31,7 @@ function Workers() {
   // console.log("data", data);
   // console.log(iscategory)
 
-  const category = [];
+  var category = [];
   data.map((item) => {
     if (item.category == iscategory) {
       category.push(item);
@@ -105,10 +104,18 @@ function Workers() {
                           data-mdb-ripple-color="light"
                           key={"bgcard" + key}
                         >
-                          <Image
+                          {/* <Image
                             src={defaultworker}
                             className="img-fluid"
                             alt=""
+                          /> */}
+                          <Image
+                            src={worker.profile_picture||defaultworker}
+                            className="img-fluid-worker"
+                            // layout="responsive" 
+                            alt=""
+                            width='400'
+                            height='200'
                           />
 
                           <a href="#!" className="ripple" key={"abker" + key}>
@@ -132,10 +139,10 @@ function Workers() {
                           <h6 className="card-title" key={"experience" + key}>
                             Experience: {worker.years_of_exp} Years
                           </h6>
-                          <p className="card-text" key={"parg" + key}>
+                          {/* <p className="card-text" key={"parg" + key}>
                             Some quick example text to build on the card title
                             and make up the bulk of the card&apos;s content.
-                          </p>
+                          </p> */}
                           <Link
                             href={`/worker-profile/${worker.username}`}
                             key={"username" + key}

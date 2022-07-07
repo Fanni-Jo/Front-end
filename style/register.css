@@ -372,7 +372,7 @@ h1.heading {
 .card-title {
   margin-top:0px;
   font-weight: 700;
-  font-size: 1.65em;
+  font-size: 1.25em;
 }
 .card-title a {
   color: #000;
@@ -401,7 +401,7 @@ body{
   border: 1px solid #edeff2;
   border-radius: 2px;
   padding: 50px 70px;
-  border:1px solid #ffffff;
+  /* border:1px solid #ffffff; */
 }
 
 .comments-title {
@@ -655,4 +655,7 @@ color:#cecece;
   font-weight:600;
   font-size:18px;
   margin-bottom:2px;
+}
+.card-body a{
+margin-left:33%;
 }
