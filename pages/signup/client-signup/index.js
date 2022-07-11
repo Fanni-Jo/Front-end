@@ -57,7 +57,9 @@ export default function ClientSignup() {
                     router.push('/Login')
                   )
 
-                  .catch(alert("client signup error"));
+                  .catch(alert("client signup error"),
+                  async (err) => {await axios.delete(`https://fanni-jo.herokuapp.com/api/user/${id.data.id}`)}
+                  );
               })
           })
         // console.log(res);

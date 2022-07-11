@@ -34,8 +34,6 @@ export default function ServiceProviderSignup() {
           .then(async (res) => {
 
             seToken(res.data.access)
-          
-
             await axios
               .get(
                 `https://fanni-jo.herokuapp.com/api/user/${event.target.username.value}`
@@ -57,8 +55,7 @@ export default function ServiceProviderSignup() {
                         category: event.target.services.value,
                         
                       },{headers:{'Authorization': `Bearer ${res.data.access}`}}).catch(
-
-                        toast.error('Worker Signup Failed')
+                        async (err) => {await axios.delete(`https://fanni-jo.herokuapp.com/api/user/${id.data.id}`),alert('Worker Signup Error')}
 
                       ).then(       
                          router.push('/Login')
