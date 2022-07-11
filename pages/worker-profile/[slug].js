@@ -120,7 +120,7 @@ const Profile = () => {
   )}else{return (
     <div className="nav-div" key={"nav not found"}>
     <div className="container-fluid  vh-50"  key={"connav not found"}>
-      <nav className="navbar " key={"nav2 notfound"}>
+      <nav className="navbar " key={"nav2"}>
         <h2 className="navbar-username py-5 " key={"No Prfoile Found"}> No Profile Found</h2>
       </nav>
     </div>

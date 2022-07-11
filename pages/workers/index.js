@@ -19,7 +19,6 @@ function Workers() {
       .then((res) => {
         setData(res.data);
         setServiceProviders(res.data);
-        // console.log("data", res.data);
       })
   };
   useEffect(() => {
@@ -36,7 +35,6 @@ function Workers() {
   });
   // console.log("category", category);
 
-  // console.log("data", data);
 
   const Categories = {
     2: "Plumbers",
