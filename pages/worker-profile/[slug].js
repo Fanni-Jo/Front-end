@@ -33,7 +33,7 @@ const Profile = () => {
     GetData();
   });
 
-  return serviceProviders.map((data,id) => {
+    if(serviceProviders){ return ( serviceProviders.map((data,id) => {
     if (data.username == slug) {
       return (
         <>
@@ -117,7 +117,7 @@ const Profile = () => {
     }
   }
   
-  );
+  ))};
 };
 
 export default Profile;
