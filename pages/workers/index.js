@@ -7,7 +7,6 @@ import Image from "next/image";
 import defaultworker from "../src/img/defaultworker.jpg";
 function Workers() {
   const [data, setData] = useState([]);
-  // const [userData, setUserData] = useState([]);
 
   const [iscategory, setCategory] = useStateContext();
   const [serviceProviders, setServiceProviders] = useSpContext();
@@ -23,7 +22,7 @@ function Workers() {
   };
   useEffect(() => {
     GetData();
-  });
+  }, []);
   // console.log("data", data);
   // console.log(iscategory)
 

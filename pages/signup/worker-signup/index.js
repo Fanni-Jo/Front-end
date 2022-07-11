@@ -58,7 +58,8 @@ export default function ServiceProviderSignup() {
                         async (err) => {await axios.delete(`https://fanni-jo.herokuapp.com/api/user/${id.data.id}`),alert('Worker Signup Error')}
 
                       ).then(       
-                         router.push('/Login')
+                        event.target.reset(),
+                        router.push('/Login')
                       )
 
 

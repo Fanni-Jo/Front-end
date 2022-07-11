@@ -16,6 +16,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.8.3",
+    "eslint-plugin-react-hooks": "^4.7.0-next-dd2d65227-20220708",
     "moment": "^2.29.3",
     "next": "latest",
     "next-images": "^1.8.4",

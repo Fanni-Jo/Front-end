@@ -31,7 +31,7 @@ const Profile = () => {
   };
   useEffect(() => {
     GetData();
-  });
+  },[]);
   if(serviceProviders){
   return serviceProviders.map((data,id) => {
     if (data.username == slug) {

@@ -22,11 +22,11 @@ const Commit = ({ slug }) => {
         setserviceprovider(data);
       }
     });
-  });
+  },[]);
 
   useEffect(() => {
     reviewGetter();
-  });
+  },[]);
   // console.log("serviceprovider", serviceprovider);
   const reviewCreator = async (e) => {
     e.preventDefault();
