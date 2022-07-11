@@ -32,8 +32,8 @@ const Profile = () => {
   useEffect(() => {
     GetData();
   });
-
-    if(serviceProviders){ return ( serviceProviders.map((data,id) => {
+  if(serviceProviders){
+  return serviceProviders.map((data,id) => {
     if (data.username == slug) {
       return (
         <>
@@ -117,7 +117,15 @@ const Profile = () => {
     }
   }
   
-  ))};
+  )}else{return (
+    <div className="nav-div" key={"nav"+id}>
+    <div className="container-fluid  vh-50"  key={"connav"+id}>
+      <nav className="navbar " key={"nav2"+id}>
+        <h2 className="navbar-username py-5 " key={"No Prfoile Found"}> No Profile Found</h2>
+      </nav>
+    </div>
+    </div>
+  )};
 };
 
 export default Profile;
