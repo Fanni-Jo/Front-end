@@ -7,7 +7,7 @@ import Comments from "./comments";
 // import raneem from "../src/img/Raneem.jpg";
 import worker from "../src/img/worker.png";
 
-import { useSpContext } from "../context/Serviceproviders";
+import { useSpContext } from "../../context/Serviceproviders";
 
 const Profile = () => {
   const [data, setData] = useState([]);

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import pic13 from "../src/img/portfolio/15.svg";
-import { useThemeContext } from "../context/Theme";
+import { useThemeContext } from "../../context/Theme";
 import axios from "axios";
-import { useSpContext } from "../context/Serviceproviders";
+import { useSpContext } from "../../context/Serviceproviders";
 import Link from "next/link";
-import { useStateContext } from "../context/categoryState";
+import { useStateContext } from "../../context/categoryState";
 import { useState, useEffect } from "react";
 
 const Commit = ({ slug }) => {

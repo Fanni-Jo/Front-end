@@ -11,7 +11,7 @@ import pic16 from "../src/img/portfolio/16.svg"
 import Link from "next/link"
 import Image from  'next/image'
 
-import { useStateContext } from "../context/categoryState"
+import { useStateContext } from "../../context/categoryState"
 
 function Services() {
 const [iscategory, setCategory] = useStateContext();

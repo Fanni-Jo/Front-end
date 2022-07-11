@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useThemeContext } from "../context/Theme"
+import { useThemeContext } from "../../context/Theme"
 
 const NavLogout = () => {
     const [islogin, setlogin] = useThemeContext();

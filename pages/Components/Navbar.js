@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from  'next/image'
 import NavLogin from './NavLogin';
-import { useThemeContext } from "../context/Theme"
+import { useThemeContext } from "../../context/Theme"
 import NavLogout from "./NavLogout"
 
 function Navbar() {

@@ -1,4 +1,4 @@
-import { useThemeContext } from "../context/Theme";
+import { useThemeContext } from "../../context/Theme";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";

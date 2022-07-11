@@ -7,11 +7,11 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import "bootstrap-icons/font/bootstrap-icons.json";
 import "react-toastify/dist/ReactToastify.css";
-import { ThemeProvider } from "./context/Theme";
+import { ThemeProvider } from "../context/Theme";
 
-import { StateProvider } from "./context/categoryState";
+import { StateProvider } from "../context/categoryState";
 
-import { ServiceProvider } from "./context/Serviceproviders";
+import { ServiceProvider } from "../context/Serviceproviders";
 import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }) {
@@ -26,15 +26,7 @@ export default function MyApp({ Component, pageProps }) {
       <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></Script>
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></Script>
 
-      {/* <title>Fanni</title> */}
-      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" /> */}
       <Head />
-      {/* <Helmet>
-    <Script src=
-      "../js/script.js" 
-    type="text/javascript" />
-       
-    </Helmet> */}
       <ServiceProvider>
         <StateProvider>
           <ThemeProvider>

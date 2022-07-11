@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useStateContext } from "../context/categoryState";
+import { useStateContext } from "../../context/categoryState";
 import Link from "next/link";
-import { useSpContext } from "../context/Serviceproviders";
+import { useSpContext } from "../../context/Serviceproviders";
 import Image from "next/image";
 import defaultworker from "../src/img/defaultworker.jpg";
 function Workers() {
@@ -21,9 +21,6 @@ function Workers() {
         setServiceProviders(res.data);
         // console.log("data", res.data);
       })
-      // .catch((e) => {
-      //   console.log("data error", e);
-      // });
   };
   useEffect(() => {
     GetData();

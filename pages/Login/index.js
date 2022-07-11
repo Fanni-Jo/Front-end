@@ -3,7 +3,7 @@ import axios from 'axios';
 import Landing from '../Landing';
 import {useState} from 'react'
 import {useRouter} from 'next/router'
-import { useThemeContext } from "../context/Theme"
+import { useThemeContext } from "../../context/Theme"
 function Login() {
   const router = useRouter();
   const [islogin, setlogin] = useThemeContext()
