@@ -1,6 +1,6 @@
 import ZaidJarrar from '../src/img/team/ZaidJarrar.PNG';
 import Barham from '../src/img/team/Barham.jpg';
-import Raneem from '../src/img/team/Raneem.jpg';
+import Raneem from '../src/img/team/raneem.jpg';
 import Ahmad from '../src/img/team/ahmad.jpeg';
 import Eman from '../src/img/team/Eman.jpg';
 
